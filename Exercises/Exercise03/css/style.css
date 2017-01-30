@@ -6,3 +6,20 @@ body {
 section, h1 {
   font-family: 'Press Start 2P', cursive;
 }
+.flash {
+	color: red;
+	-webkit-animation-name: flashanim; /* Chrome, Safari, Opera */
+    -webkit-animation-duration: .5s; /* Chrome, Safari, Opera */
+    -webkit-animation-timing: ease-in-out;
+    -webkit-animation-iteration-count: infinite;
+    -webkit-animation-direction: alternate;
+     animation-name: flashanim;
+    animation-duration: .5s;
+    animation-timing: ease-in-out;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+
+@keyframes flashanim {
+    0% {	color: red;}
+    100% {	color: yellow;}
