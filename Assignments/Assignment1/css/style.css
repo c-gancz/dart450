@@ -4,16 +4,19 @@
 }
 
 body {
-  width:85%;
-  margin: 0 auto;
+  background-color: rgb(23, 0, 65);
 }
 
-#square {
-  width:200px;
-  height:200px;
-  background-color: pink;
-  margin-right:15px;
-  margin-bottom: 15px;
+.doors {
+  width:35%;
+  height: 100vh;
+  background-color: rgb(217, 27, 56);
   display: inline-block;
-  font-size: 30px;
+  border-style: solid;
+  border-width: 5px;
+  border-color: rgb(255, 84, 84);
+}
+
+#twodoors {
+  margin-left:22.5%;
 }
