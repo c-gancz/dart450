@@ -1,6 +1,6 @@
 $(document).ready(function (){
 
-  openDoors();
+  $(openDoors).click(myCircles);
 
 });
 
@@ -24,4 +24,14 @@ $(bothDoors).click(function (){
 
 });
 
+}
+
+function myCircles (){
+  var circle1 = $('<div class="circle"></div>');
+  var circle2 = $('<div class="circle"></div>');
+  var circle3 = $('<div class="circle"></div>');
+  var circle4 = $('<div class="circle"></div>');
+  var circles = [circle1, circle2, circle3, circle4]
+
+  $('body').append(circles);
 }
