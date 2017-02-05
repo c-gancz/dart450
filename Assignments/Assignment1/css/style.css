@@ -8,11 +8,12 @@ body {
   margin: 0 auto;
 }
 
-.square {
+#square {
   width:200px;
   height:200px;
   background-color: pink;
   margin-right:15px;
   margin-bottom: 15px;
   display: inline-block;
+  font-size: 30px;
 }
