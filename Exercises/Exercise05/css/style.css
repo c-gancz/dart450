@@ -47,3 +47,7 @@ button {
   color:#fff;
   cursor:pointer;
 }
+
+#newname {
+  display: none;
+}
