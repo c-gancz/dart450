@@ -1,0 +1,49 @@
+* {
+  margin: 0;
+  padding:0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: purple;
+}
+
+section {
+  width:50%;
+  height:100vh;
+  margin:0 auto;
+  background-color: orange;
+}
+
+h1 {
+  color: #fff;
+  font-family: sans-serif;
+  font-size: 60px;
+  text-align: center;
+  padding-top: 100px;
+}
+
+input, button {
+  display: block;
+  width: 60%;
+  height:80px;
+  margin-left: 20%;
+  border-radius: 15px;
+  border-style: none;
+  outline: none;
+}
+
+input {
+  margin-top: 70px;
+  padding: 10px;
+  padding-left:30px;
+  font-size:24px;
+}
+
+button {
+  background-color: purple;
+  margin-top: 30px;
+  font-size: 40px;
+  color:#fff;
+  cursor:pointer;
+}
