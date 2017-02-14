@@ -1,12 +1,16 @@
 $(document).ready(function (){
 
 introDoors();
-inputValue();
+
+inputResponse();
+
+
 
 
 });
 
 //////////////////// FUNCTIONS APPEAR HERE /////////////////////
+
 
 function introDoors (){
   var doors = $('.sliding-doors');
@@ -29,21 +33,45 @@ function introDoors (){
   });
 };
 
-function inputValue (){
+function inputResponse (){
 
   $('button').click(function(){
     var inputValue = $('#inputvalue').val();
-    var voiceResponse = 'Hey there' + inputValue + 'You have an interesting name. Not as interesting as mine though, and definetly not as interesting as my life.';
     var inputDisappear = $('.input');
     var doorsDisappear = $('.sliding-doors');
+    var date = new Date();
+    var today = date.getDay();
+    var todayName = 'Nothing.'
 
-    responsiveVoice.speak(voiceResponse, "US English Female", {
-      rate:0.7,
+    if (today == 0) {
+      todayName = 'Sunday';
+    }
+    else if (today == 1) {
+      todayName = 'Monday, which is kind of a crappy day.';
+    }
+    else if (today == 2) {
+      todayName = 'Tuesday';
+    }
+    else if (today == 3) {
+      todayName = 'Wednesday';
+    }
+    else if (today == 4) {
+      todayName = 'Thursday';
+    }
+    else if (today == 5) {
+      todayName = 'Friday';
+    }
+    else if (today == 6) {
+      todayName = 'Saturday';
+    }
+
+    var voiceResponse = 'Hello there,' + inputValue + ', Welcome to my life on a weekly basis. Today is ' + todayName;
+    responsiveVoice.speak(voiceResponse, "Australian Female", {
+      rate: 0.9,
       pitch:1
     });
 
     $(inputDisappear).remove();
     $(doorsDisappear).fadeOut(2000);
   });
-
 };
