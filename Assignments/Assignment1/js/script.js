@@ -1,11 +1,14 @@
 $(document).ready(function (){
 
+var enterButton = $('button');
+
 introDoors();
 
 inputResponse();
 
-
-
+$(enterButton).click(function(){
+      setInterval(showDay,2000);
+});
 
 });
 
@@ -73,5 +76,13 @@ function inputResponse (){
 
     $(inputDisappear).remove();
     $(doorsDisappear).fadeOut(2000);
+
+    $('body').css({
+      'background':'none'
+    });
   });
+};
+
+function showDay(){
+  $('#block').show();
 };
