@@ -1,6 +1,7 @@
 $(document).ready(function (){
 
 var enterButton = $('button');
+var atomLoader = $('#atomo')
 
 introDoors();
 
@@ -8,6 +9,7 @@ inputResponse();
 
 $(enterButton).click(function(){
       setInterval(showDay,10000);
+      $(atomLoader).show();
 });
 
 });
@@ -68,7 +70,7 @@ function inputResponse (){
       todayName = 'Saturday, which is a homework-filled day.';
     }
 
-    var voiceResponse = 'Hello there,' + inputValue + ', Welcome to my life on a weekly basis. Today is ' + todayName;
+    var voiceResponse = 'Hello there,' + inputValue + ", Welcome to Christina's life on a weekly basis. Today is " + todayName;
     responsiveVoice.speak(voiceResponse, "Australian Female", {
       rate: 0.9,
       pitch:1
