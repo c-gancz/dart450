@@ -1,0 +1,30 @@
+@import url('https://fonts.googleapis.com/css?family=Muli');
+
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  background: url(../img/wallpaper.jpg) no-repeat top fixed;
+	background-size: cover;
+	}
+
+#coffeecounter {
+  background-color:rgba(255, 255, 255, 0.75);
+  border-radius: 20px;
+  display: none;
+  display: block;
+  float: right;
+  font-family: 'Muli', sans-serif;
+  font-size:12px;
+  padding: 20px;
+  margin: 30px;
+  cursor: pointer;
+}
+
+#counter {
+  font-size: 100px;
+  display:block;
+  float: left;
+  margin-right: 30px;
+  margin-left: 10px;
+}

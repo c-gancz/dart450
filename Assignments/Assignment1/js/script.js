@@ -9,7 +9,6 @@ inputResponse();
 
 $(enterButton).click(function(){
       setInterval(showDay,10000);
-      $(atomLoader).show();
 });
 
 });

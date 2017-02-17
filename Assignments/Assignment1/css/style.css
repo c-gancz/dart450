@@ -87,6 +87,7 @@ body {
   font-family: 'Muli', sans-serif;
 }
 
+/* Loader design and animation taken from Henry on CodePen. http://codepen.io/hedgehog1029/pen/gpRJZx*/
 .loader-wrapper {
   position: fixed;
   width: 100%;
