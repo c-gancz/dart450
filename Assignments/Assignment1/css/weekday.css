@@ -6,6 +6,7 @@ body {
   box-sizing: border-box;
   background: url(../img/wallpaper.jpg) no-repeat top fixed;
 	background-size: cover;
+  font-family: 'Muli', sans-serif;
 	}
 
 #coffeecounter {
@@ -14,11 +15,15 @@ body {
   display: none;
   display: block;
   float: right;
-  font-family: 'Muli', sans-serif;
   font-size:12px;
   padding: 20px;
   margin: 30px;
   cursor: pointer;
+}
+
+#coffeecounter h1 {
+  float: right;
+  width: 300px;
 }
 
 #counter {
@@ -27,4 +32,61 @@ body {
   float: left;
   margin-right: 30px;
   margin-left: 10px;
+}
+
+.speech-bubble {
+  background: #ff5400;
+  color: #ffe0d0;
+  display: inline-block;
+	font-size: 14px;
+	position: relative;
+	vertical-align: top;
+		width: 30em;
+    display: inline-block;
+  margin: 40px;
+  display: none;
+}
+
+.speech-bubble:after {
+	border: 1.5em solid transparent;
+	border-top-color: #ff5400;
+	content: '';
+	margin-left: -2em;
+	position: absolute;
+		top: 100%;
+		left: 50%;
+	width: 0;
+	height: 0;
+    display: inline-block;
+}
+
+.speech-bubble section {
+  width: 18em;
+  display: inline-block;
+  float: right;
+  margin-top: 10px;
+  padding: 10px;
+  padding-right: 20px;
+}
+
+.speech-bubble img {
+  margin-left: 30px;
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+.speech-bubble h1 {
+  font-size: 18px;
+}
+
+.speech-bubble p {
+  font-size:14px;
+  line-height: 18px;
+  font-weight: normal;
+  margin-top: -7px;
+}
+
+.reply {
+  font-weight: normal;
+  text-decoration: underline;
+  cursor: pointer;
 }
