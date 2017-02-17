@@ -90,3 +90,32 @@ body {
   text-decoration: underline;
   cursor: pointer;
 }
+
+textarea {
+  background: #fff;
+  color: #ff5400;
+  font-size: 14px;
+  position: relative;
+  width: 27em;
+  height:150px;
+  margin-left: 40px;
+  font-family: 'Muli', sans-serif;
+  padding: 20px;
+  line-height: 20px;
+  outline: none;
+  border: none;
+  display: none;
+}
+
+button {
+  width: 31.5em;
+  background-color:#ff5400;
+  padding: 20px;
+  margin-left: 40px;
+  font-family: 'Muli', sans-serif;
+  color:#fff;
+  outline: none;
+  border: none;
+  font-weight: bold;
+  display: none;
+}

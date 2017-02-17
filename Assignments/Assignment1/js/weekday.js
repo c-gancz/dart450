@@ -44,9 +44,16 @@ function coffeeCounter(){
 function textMessage(){
   var textPopUp = $('.speech-bubble');
   var interval = 3000;
+  var clickReply = $('.reply');
+  var replyBox = $('textarea');
+  var sendButton= $('button');
 
   setInterval(function () {
       $(textPopUp).fadeIn();
   },interval);
 
+  $(clickReply).click(function (){
+    $(replyBox).show();
+    $(sendButton).show();
+  });
 };
