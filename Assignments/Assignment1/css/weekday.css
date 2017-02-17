@@ -118,4 +118,5 @@ button {
   border: none;
   font-weight: bold;
   display: none;
+  cursor: pointer;
 }
