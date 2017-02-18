@@ -4,6 +4,10 @@ $(document).ready(function() {
 
   textMessage();
 
+  messageOptions();
+
+  textLoop();
+
 });
 
 function coffeeCounter(){
@@ -55,5 +59,44 @@ function textMessage(){
   $(clickReply).click(function (){
     $(replyBox).show();
     $(sendButton).show();
+    $('#float').show();
+  });
+};
+
+function messageOptions(){
+  var options = [
+    "Choose from your usual responses:",
+    "Gooddd morning howw are youu??",
+    "I'm on my way to school, where you at?",
+    "I'm so tired I need sleep.",
+    "Whaaaaattt?? No way.",
+    "Soo bored and fed up!!"
+  ];
+
+  $('#one').text(options[0]);
+  $('#2').text(options[1]);
+  $('#3').text(options[2]);
+  $('#4').text(options[3]);
+  $('#5').text(options[4]);
+
+};
+
+function textLoop(){
+
+  $('button').click(function(){
+
+    const TOTAL_DIVS = 10;
+    const INTERVAL = 1000;
+
+    setInterval(function () {
+
+      for (var i = 0; i < TOTAL_DIVS; i++) {
+        var div = $('<div id="inputtext' + i + '" class="input"></div>')
+        var replyInput = $('textarea').val();
+
+        $(div).text(replyInput);
+        $('#holder').append(div);
+      }
+    },INTERVAL);
   });
 };

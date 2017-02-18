@@ -120,3 +120,35 @@ button {
   display: none;
   cursor: pointer;
 }
+
+.responses {
+  width:300px;
+  height:auto;
+  background-color: red;
+  display: block;
+  padding: 10px;
+  color:#fff;
+  margin-bottom: 10px;
+}
+
+#float {
+  position: fixed;
+  margin-left:500px;
+  margin-top: -240px;
+  display: none;
+}
+
+#one {
+  background-color: blue;
+}
+
+.input{
+  display: inline-block;
+}
+
+#holder {
+  position: absolute;
+  margin-top: -500px;
+  color:#ff5400;
+  font-weight: bold;
+}
