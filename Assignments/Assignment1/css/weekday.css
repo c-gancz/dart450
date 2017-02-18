@@ -129,6 +129,7 @@ button {
   padding: 10px;
   color:#fff;
   margin-bottom: 10px;
+  cursor: pointer;
 }
 
 #float {
@@ -149,6 +150,5 @@ button {
 #holder {
   position: absolute;
   margin-top: -500px;
-  color:#ff5400;
   font-weight: bold;
 }

@@ -65,7 +65,7 @@ function textMessage(){
 
 function messageOptions(){
   var options = [
-    "Choose from your usual responses:",
+    "Choose from your usual responses, or type in the box to formulate your own message.",
     "Gooddd morning howw are youu??",
     "I'm on my way to school, where you at?",
     "I'm so tired I need sleep.",
@@ -73,11 +73,34 @@ function messageOptions(){
     "Soo bored and fed up!!"
   ];
 
+  var abusiveResponses = [
+    "Focus dammit. Stop texting would you?",
+    "If you keep texting you will not finish your work, and if you don't finish your work, you will fail."
+  ]
+
+  var optionDivs = ["#one", "#2", "#3", "#4", "#5", "#6"]
+
+  var randomDivs = optionDivs[Math.floor(Math.random() * optionDivs.length)];
+
+  var randomResponse = abusiveResponses[Math.floor(Math.random() * abusiveResponses.length)];
+
   $('#one').text(options[0]);
   $('#2').text(options[1]);
   $('#3').text(options[2]);
   $('#4').text(options[3]);
   $('#5').text(options[4]);
+  $('#6').text(options[5]);
+
+  $(randomDivs).click(function(){
+    $(optionDivs[0]).text(randomResponse);
+    $(optionDivs[1]).text(randomResponse);
+    $(optionDivs[2]).text(randomResponse);
+    $(optionDivs[3]).text(randomResponse);
+    $(optionDivs[4]).text(randomResponse);
+    $(optionDivs[5]).text(randomResponse);
+    $(optionDivs[6]).text(randomResponse);
+  });
+
 
 };
 
@@ -99,4 +122,18 @@ function textLoop(){
       }
     },INTERVAL);
   });
+
+  $('#holder').mouseover(function(){
+      $('#holder').css({
+        'font-size':'30px',
+        'color':'red'
+      });
+  });
+
+  $('#holder').mouseout(function(){
+    $('#holder').css({
+      'font-size':'18px',
+      'color':'black'
+    });
+  })
 };
