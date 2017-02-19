@@ -153,6 +153,7 @@ button {
   font-weight: bold;
 }
 
+/* Code taken from Matthew Dordal http://codepen.io/mdd/pen/xEuyG*/
 .animate {
   -webkit-animation: squareToCircle 2s 1s infinite alternate;
 }
@@ -160,27 +161,27 @@ button {
 @-webkit-keyframes squareToCircle {
     0% {
       border-radius: 0 0 0 0;
-      background: coral;
+      background: orange;
       transform: rotate(0deg);
     }
     25% {
       border-radius: 50% 0 0 0;
-      background: darksalmon;
+      background: rgb(205, 106, 26);
       transform: rotate(45deg);
     }
     50% {
       border-radius: 50% 50% 0 0;
-      background: indianred;
+      background: red;
       transform: rotate(90deg);
     }
     75% {
       border-radius: 50% 50% 50% 0;
-      background: lightcoral;
+      background: rgb(255, 140, 83);
       transform: rotate(135deg);
     }
     100% {
       border-radius: 50% 50% 50% 50%;
-      background: darksalmon;
+      background: rgb(195, 103, 58);
       transform: rotate(180deg);
     }
 }

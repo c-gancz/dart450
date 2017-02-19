@@ -100,7 +100,22 @@ function messageOptions(){
     $(optionDivs[5]).text(randomResponse);
     $(optionDivs[6]).text(randomResponse);
 
-    //$(optionDivs).addClass("animate");
+    $('.responses').addClass('animate');
+    $('.responses').css({
+      'width':'20%',
+      'position':'relative',
+      'font-size':'30px',
+      'padding':'40px',
+      'text-align':'center',
+      'margin-bottom': '50px',
+      'display':'inline-block',
+      'margin-right':'7.5%'
+    });
+
+    $('#float').css({
+      'margin-left':'7.5%',
+      'margin-top':'-372px'
+    });
   });
 
 
