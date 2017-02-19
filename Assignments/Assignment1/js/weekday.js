@@ -99,6 +99,8 @@ function messageOptions(){
     $(optionDivs[4]).text(randomResponse);
     $(optionDivs[5]).text(randomResponse);
     $(optionDivs[6]).text(randomResponse);
+
+    //$(optionDivs).addClass("animate");
   });
 
 
