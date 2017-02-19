@@ -9,7 +9,7 @@ $(document).ready(function() {
   // The function that makes the reply options appear, and have a random abusive message that appear when clicking on a random reply option. This function will also enable animation to take place on the abusive response being showed.
   messageOptions();
 
-  // This function makes the user's reply message appear an infinite number of times on the page. It also changes certain CSS properties when you hover over it. 
+  // This function makes the user's reply message appear an infinite number of times on the page. It also changes certain CSS properties when you hover over it.
   textLoop();
 
 });
@@ -34,6 +34,7 @@ function coffeeCounter(){
     $("#counter").text(coffeeMil);
       coffeeMil++;
     $('#coffeecounter').show();
+    console.log('Regular coffee counter appeared and working.');
   };
 
   // The function that enables the counter to increase rapidly over hover. It also indicates the text that will change on hover.
@@ -42,6 +43,7 @@ function coffeeCounter(){
       coffeeMil++;
     $('#coffeecounter').show();
     $("#info").text('HEY STOP MAKING CHRISTINA DRINK COFFEE!!');
+    console.log('Coffee counter with increased speed working.');
 
   };
 
@@ -59,6 +61,7 @@ function coffeeCounter(){
         rate: 1.2,
         pitch:1
       });
+      console.log('Coffee counter change in color and responsive voice worked.');
   });
 };
 
@@ -83,6 +86,7 @@ function textMessage(){
   // The function that enables the text message bubble to fade in at a certain time.
   setInterval(function () {
       $(textPopUp).fadeIn();
+      console.log('Text message faded in.');
   },interval);
 
   // The function that allows the reply box, the send button, and the text message reply options to appear on when clicking on "reply".
@@ -90,6 +94,7 @@ function textMessage(){
     $(replyBox).show();
     $(sendButton).show();
     $('#float').show();
+    console.log('Reply button was clicked and reply options now show.');
   });
 };
 
@@ -140,9 +145,10 @@ function messageOptions(){
     $(optionDivs[4]).text(randomResponse);
     $(optionDivs[5]).text(randomResponse);
     $(optionDivs[6]).text(randomResponse);
-
+      console.log('Random response:' + randomResponse);
     // This function enables the text message response boxes to have a class called "animate". The "animate" class refers back various CSS animation properties which change its background color and text properties.
     $('.responses').addClass('animate');
+      console.log('Reply options are animating.');
 
     // This function allows certain CSS properties of the reply boxes to change.
     $('.responses').css({
@@ -172,6 +178,7 @@ function textLoop(){
   // On click of the "send" button, this function will be generated.
   $('button').click(function(){
 
+    console.log('"Send" button was clicked.');
     // Constant referring to the multiple of the div that will be generated over and over.
     const TOTAL_DIVS = 10;
 
@@ -194,6 +201,8 @@ function textLoop(){
 
         // The function that enables the body to make the infinite number of divs appear.
         $('#holder').append(div);
+
+        console.log('User reply message loop activated in background.');
       }
     },INTERVAL);
   });
@@ -204,6 +213,7 @@ function textLoop(){
         'font-size':'30px',
         'color':'red'
       });
+      console.log('Mouseover text: red');
   });
 
 // The function that allows the CSS properties of the text in the loop to return back to their original state on mouseout.
@@ -212,5 +222,6 @@ function textLoop(){
       'font-size':'18px',
       'color':'black'
     });
+    console.log('Mouseouttext: black');
   })
 };

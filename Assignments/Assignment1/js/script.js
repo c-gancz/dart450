@@ -12,6 +12,7 @@ inputResponse();
 // When clicking on the Enter button, an html page determined by the day of the week it is appears.
 $(enterButton).click(function(){
       setInterval(showDay,12000);
+      console.log('The "Enter" button was clicked.');
 });
 
 });
@@ -28,6 +29,7 @@ function introDoors (){
   //When hovering over the doors, make the input box appear.
   $(doors).mouseover(function (){
     $(input).fadeIn(3000);
+    console.log('The doors and input box appeared.');
   });
 
   //When hovering over the doors, change the sliding-doors background color to orange.
@@ -35,6 +37,7 @@ function introDoors (){
     $(doors).css({
       'background-color':'orange'
     });
+    console.log('Doors color: orange');
   });
 
   //When hovering away from the doors, change the sliding-doors background color to purple.
@@ -42,6 +45,7 @@ function introDoors (){
     $(doors).css({
       'background-color':'rgb(179, 49, 186)'
     });
+    console.log('Doors color: rgb(179, 49, 186)');
   });
 };
 
@@ -68,24 +72,31 @@ function inputResponse (){
     //The loop using an if statement to generate a certain voice response on a certain day.
     if (today == 0) {
       todayName = 'Sunday, which is a rather fun day.';
+      console.log('Day: Sunday');
     }
     else if (today == 1) {
       todayName = 'Monday, which is kind of a crappy day.';
+      console.log('Day: Monday');
     }
     else if (today == 2) {
       todayName = 'Tuesday, which is kind of long day.';
+      console.log('Day: Tuesday');
     }
     else if (today == 3) {
       todayName = 'Wednesday, which is an okay day.';
+      console.log('Day: Wednesday');
     }
     else if (today == 4) {
       todayName = 'Thursday, which is an exhausting day.';
+      console.log('Day: Thursday');
     }
     else if (today == 5) {
       todayName = 'Friday, which sucks because I work.';
+      console.log('Day: Friday');
     }
     else if (today == 6) {
       todayName = 'Saturday, which is a homework-filled day.';
+      console.log('Day: Saturday');
     }
 
     // The voice response when you click "Enter" with the added variable of the person's name as well as the voice response message of that particular day.
@@ -96,17 +107,21 @@ function inputResponse (){
       rate: 0.9,
       pitch:1
     });
+    console.log('Responsive voice with added name working.');
 
     //The input box disappears on click.
     $(inputDisappear).remove();
+    console.log('Input box removed.');
 
     //The input box fades out on click.
     $(doorsDisappear).fadeOut(2000);
+    console.log('Doors removed.');
 
     //The body's background is removed, making the background color white.
     $('body').css({
       'background':'none'
     });
+    console.log('Background removed.');
   });
 };
 
@@ -120,7 +135,7 @@ function showDay(){
 
   // Using array index numbers, if statements are produced to make a certain page a appear on a certain day of the week.
   if (today == 0) {
-    location.href = weeklyPage[0];
+    location.href = weeklyPage[0];;
   }
 
   else if (today == 1) {
