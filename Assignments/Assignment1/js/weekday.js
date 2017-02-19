@@ -75,7 +75,8 @@ function messageOptions(){
 
   var abusiveResponses = [
     "Focus dammit. Stop texting would you?",
-    "If you keep texting you will not finish your work, and if you don't finish your work, you will fail."
+    "If you keep texting you will not finish your work, and if you don't finish your work, you will fail.",
+    "Distractions... Distractions... Distractions."
   ]
 
   var optionDivs = ["#one", "#2", "#3", "#4", "#5", "#6"]
@@ -109,7 +110,8 @@ function messageOptions(){
       'text-align':'center',
       'margin-bottom': '50px',
       'display':'inline-block',
-      'margin-right':'7.5%'
+      'margin-right':'7.5%',
+      'cursor':'auto'
     });
 
     $('#float').css({

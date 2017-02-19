@@ -1,14 +1,17 @@
 $(document).ready(function (){
 
+// Variable indicating the Enter button on the page.
 var enterButton = $('button');
-var atomLoader = $('#atomo')
 
+// The function that will make the doors open and close, as well as change colour on hover.
 introDoors();
 
+// The function that will generate a voice response depending on the input name as well as the day of the week.
 inputResponse();
 
+// When clicking on the Enter button, an html page determined by the day of the week it is appears.
 $(enterButton).click(function(){
-      setInterval(showDay,10000);
+      setInterval(showDay,12000);
 });
 
 });
@@ -100,7 +103,7 @@ function inputResponse (){
     //The input box fades out on click.
     $(doorsDisappear).fadeOut(2000);
 
-    //The body
+    //The body's background is removed, making the background color white.
     $('body').css({
       'background':'none'
     });
@@ -108,10 +111,14 @@ function inputResponse (){
 };
 
 function showDay(){
+  // Variables getting data on the day of the week it currently is.
   var date = new Date();
   var today = date.getDay();
+
+  // Array of various other html pages that will appear on a specific day.
   var weeklyPage = ["html/sunday.html", "html/monday.html", "html/tuesday.html", "html/wednesday.html", "html/thursday.html", "html/friday.html", "html/saturday.html"]
 
+  // Using array index numbers, if statements are produced to make a certain page a appear on a certain day of the week.
   if (today == 0) {
     location.href = weeklyPage[0];
   }
