@@ -1,0 +1,43 @@
+.speech-bubble, button {
+  background-color: rgb(249, 195, 4);
+}
+
+textarea {
+  color:rgb(249, 195, 4);
+}
+
+.speech-bubble:after{
+  border-top-color: rgb(249, 195, 4);
+}
+
+.responses {
+  background-color:rgb(250, 205, 46);
+}
+
+@-webkit-keyframes squareToCircle {
+    0% {
+      border-radius: 0 0 0 0;
+      background: rgb(249, 195, 4);
+      transform: rotate(0deg);
+    }
+    25% {
+      border-radius: 50% 0 0 0;
+      background:rgb(254, 209, 52);
+      transform: rotate(45deg);
+    }
+    50% {
+      border-radius: 50% 50% 0 0;
+      background: red;
+      transform: rotate(90deg);
+    }
+    75% {
+      border-radius: 50% 50% 50% 0;
+      background: rgb(180, 140, 1);
+      transform: rotate(135deg);
+    }
+    100% {
+      border-radius: 50% 50% 50% 50%;
+      background: rgb(129, 100, 0);
+      transform: rotate(180deg);
+    }
+}
