@@ -103,9 +103,9 @@ function messageOptions(){
 
   // The array that holds various text message reply options.
   var options = [
+    "Choose from your usual responses, or type in the box to formulate your own message.",
     "Sorry bro. If I had a nickel for all the homework I have to do today...",
     "YASSS. Get me out of this homework torture.",
-    "Call me later?",
     "Why the hell not",
     "Unfortunately I must decline :(",
     "I'm glad you call me when you're bored lol. Sure"
