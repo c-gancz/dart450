@@ -65,12 +65,15 @@ function handleTrackingEvent (event) {
 
       if (rect.color == 'red') {
         divColor.r = Math.min(255, divColor.r + 2);
+        $('#color').text("I'm burning up!!");
       }
       else if (rect.color == 'green') {
         divColor.g = Math.min(255, divColor.g + 2);
+        $('#color').text("I think I'm gunna be sick...");
       }
       else if (rect.color == 'blue') {
         divColor.b = Math.min(255, divColor.b + 2);
+        $('#color').text("I'm feeling pretty blue.");
       }
     });
   }
