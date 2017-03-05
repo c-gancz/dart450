@@ -1,0 +1,35 @@
+/*
+
+ScrollMagic with TweenMax
+Pippin Barr
+
+Basic styling.
+
+*/
+
+body {
+  margin-top: 400px;
+  margin-bottom: 400px;
+}
+
+.block {
+  height: 200px;
+  width: 200px;
+  margin-left: 60%;
+  background-color: hotpink;
+  font-family: sans-serif;
+  font-size: 2em;
+  font-weight: bold;
+  text-align: center;
+}
+
+#fixedblock {
+  position: fixed;
+  top: 100px;
+  left: 100px;
+  margin: 0;
+}
+
+#trigger {
+  background-color: yellow;
+}
