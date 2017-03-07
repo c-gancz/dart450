@@ -6,6 +6,10 @@ $(document).ready(function() {
 
   titleSlide();
 
+  theIdea();
+
+  medicalApps();
+
 
 });
 
@@ -44,7 +48,7 @@ function titleFade(){
 function titleSlide(){
   var background = new ScrollMagic.Scene({
     triggerElement: "#trigger1",
-    duration: 500
+    duration: 100
   });
 
   background.setTween("#trigger1", 0.1, {
@@ -54,4 +58,36 @@ function titleSlide(){
   background.triggerHook(0);
 
   background.addTo(controller);
+};
+
+function theIdea(){
+  var idea = new ScrollMagic.Scene({
+    triggerElement: "#trigger2",
+    duration: 1000
+  });
+
+  idea.setTween("#trigger2", 0.5, {
+    'marginLeft':'100px',
+    'backgroundColor':'yellow'
+  });
+
+  idea.triggerHook(1);
+
+  idea.addTo(controller);
+};
+
+function medicalApps(){
+  var apps = new ScrollMagic.Scene({
+    triggerElement: "#trigger3",
+    duration: 500
+  });
+
+  apps.setTween("#trigger3", 0.9, {
+    'opacity':'1',
+    'margin-left':'700px'
+  });
+
+  apps.triggerHook(0.5);
+
+  apps.addTo(controller);
 };
