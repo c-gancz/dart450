@@ -10,6 +10,13 @@ $(document).ready(function() {
 
   medicalApps();
 
+  examples();
+
+  libraries();
+
+  code();
+
+  images();
 
 });
 
@@ -62,11 +69,11 @@ function titleSlide(){
 
 function theIdea(){
   var idea = new ScrollMagic.Scene({
-    triggerElement: "#trigger2",
+    triggerElement: ".trigger2",
     duration: 1000
   });
 
-  idea.setTween("#trigger2", 0.5, {
+  idea.setTween(".trigger2", 0.5, {
     'marginLeft':'100px',
     'backgroundColor':'yellow'
   });
@@ -84,10 +91,101 @@ function medicalApps(){
 
   apps.setTween("#trigger3", 0.9, {
     'opacity':'1',
-    'margin-left':'700px'
+    'width':'80%',
+    'marginLeft':'200px'
   });
 
   apps.triggerHook(0.5);
 
   apps.addTo(controller);
+};
+
+function examples(){
+  var example = new ScrollMagic.Scene({
+    triggerElement: "a",
+    duration: 500
+  });
+
+  example.setTween("a", 0.9, {
+    'marginLeft':'20px',
+    'opacity':'1'
+  });
+
+  example.triggerHook(0.7);
+
+  example.addTo(controller);
+};
+
+function libraries(){
+  var library = new ScrollMagic.Scene({
+    triggerElement: ".extend",
+    duration: 500
+  });
+
+  library.setTween(".extend", 0.9, {
+    'width':'80%'
+  });
+
+  library.triggerHook(0.7);
+
+  library.addTo(controller);
+};
+
+function code(){
+  var code = new ScrollMagic.Scene({
+    triggerElement: "#trigger6",
+    duration: 500
+  });
+
+  code.setTween("#trigger6", 0.9, {
+    'marginLeft':'600px'
+  });
+
+  code.triggerHook(0.5);
+
+  code.addTo(controller);
+};
+
+function images(){
+  var image1 = new ScrollMagic.Scene({
+    triggerElement: "#image1",
+    duration: 500
+  });
+
+  image1.setTween("#image1", 0.9, {
+    'marginLeft':'600px',
+    'opacity':'1'
+  });
+
+  image1.triggerHook(0.5);
+
+  image1.addTo(controller);
+
+  var image2 = new ScrollMagic.Scene({
+    triggerElement: "#image2",
+    duration: 500
+  });
+
+  image2.setTween("#image2", 0.9, {
+    'marginLeft':'200px',
+    'opacity':'1'
+  });
+
+  image2.triggerHook(0.5);
+
+  image2.addTo(controller);
+
+  var image3 = new ScrollMagic.Scene({
+    triggerElement: "#image3",
+    duration: 500
+  });
+
+  image3.setTween("#image3", 0.9, {
+    'opacity':'1',
+    'marginLeft':'200px'
+  });
+
+  image3.triggerHook(0.5);
+
+  image3.addTo(controller);
 };
