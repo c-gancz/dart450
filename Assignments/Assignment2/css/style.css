@@ -1,22 +1,20 @@
-  video, canvas {
-    margin-left: 0px;
-    margin-top: 0px;
+* {
+  margin:0;
+  padding:0;
+  box-sizing: border-box;
+}
+
+  canvas {
+  z-index: 1;
+}
+
+#webcam {
+  background-color: rgba(250, 255, 0, 1);
+  width:70%;
+  height: 100vh;
+}
+
+  video {
+    z-index: -100;
     position: absolute;
   }
-.our_container{
- position:absolute;
-  margin-top:250px;
-  width:320px;
-  height:240px;
-  background:#ddd;
-}
-.message{
-  background:#ccc;
-}
-.object{
-  display: inline-block;
-  width:5px;
-  height:5px;
-  background-color:black;
-  transition:all 0.3s;
-}
