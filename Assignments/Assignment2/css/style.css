@@ -1,0 +1,22 @@
+  video, canvas {
+    margin-left: 0px;
+    margin-top: 0px;
+    position: absolute;
+  }
+.our_container{
+ position:absolute;
+  margin-top:250px;
+  width:320px;
+  height:240px;
+  background:#ddd;
+}
+.message{
+  background:#ccc;
+}
+.object{
+  display: inline-block;
+  width:5px;
+  height:5px;
+  background-color:black;
+  transition:all 0.3s;
+}
