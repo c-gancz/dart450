@@ -9,12 +9,13 @@
 }
 
 #webcam {
-  background-color: rgba(250, 255, 0, 1);
-  width:70%;
+  width:61.9%;
   height: 100vh;
 }
 
   video {
     z-index: -100;
     position: absolute;
+    height:100vh;
+    -webkit-filter: hue-rotate(180deg);
   }
