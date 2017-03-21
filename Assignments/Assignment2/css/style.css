@@ -4,6 +4,10 @@
   box-sizing: border-box;
 }
 
+body {
+  background-color: yellow;
+}
+
   canvas {
   z-index: 1;
 }
