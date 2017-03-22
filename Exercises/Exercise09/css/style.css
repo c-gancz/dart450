@@ -33,7 +33,7 @@ body {
 div {
   width:80%;
   margin-left: 10%;
-  margin-top: 250px;
+  margin-top: 10%;
   text-align: center;
 }
 
@@ -50,6 +50,7 @@ h3 {
 #firstname, #lastname, #moods {
     background-color: white;
     color: orange;
+    cursor: pointer;
 }
 
 #firstname {

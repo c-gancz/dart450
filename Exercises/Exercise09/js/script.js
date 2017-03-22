@@ -7,35 +7,32 @@ $(document).ready(function() {
 
 
 function gotData (data) {
+  function getRandomElement(array) {
+    return array[Math.floor(Math.random() * array.length)];
+  }
+
   var firstname = getRandomElement(data.firstname);
+  var lastname = getRandomElement(data.lastname);
+  var moods = getRandomElement(data.moods);
+
   $('#firstname').text(firstname);
 
-  var lastname = getRandomElement(data.lastname);
+  $('#firstname').click(function(){
+      var firstname = getRandomElement(data.firstname);
+      $('#firstname').text(firstname);
+  })
 
-  var lastnameArticle = getArticle(lastname);
-  $('#lastname').text(lastnameArticle + " " + lastname);
+  $('#lastname').text(lastname);
 
-  var moods = getRandomElement(data.moods);
-  var moodsArticle = getArticle(moods);
-  $('#moods').text(moodsArticle + " " + moods + ".");
-}
+  $('#lastname').click(function(){
+      var lastname = getRandomElement(data.lastname);
+      $('#lastname').text(lastname);
+  })
 
+  $('#moods').text(moods + ".");
 
-function getArticle(string) {
-  var article;
-  var firstLetter = string.charAt(0).toLowerCase();
-
-  if ("aeiou".indexOf(firstLetter) != -1) {
-    article = ""
-  }
-
-  else {
-    article = ""
-  }
-
-  return article;
-}
-
-function getRandomElement(array) {
-  return array[Math.floor(Math.random() * array.length)];
+  $('#moods').click(function(){
+      var moods = getRandomElement(data.moods);
+      $('#moods').text(moods + ".");
+  })
 }
