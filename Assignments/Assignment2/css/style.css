@@ -8,13 +8,14 @@ body {
   background-color: yellow;
 }
 
-  canvas {
+canvas {
   z-index: 1;
 }
 
 #webcam {
   width:61.9%;
   height: 100vh;
+  display: inline-block;
 }
 
   video {
@@ -23,3 +24,15 @@ body {
     height:100vh;
     -webkit-filter: hue-rotate(180deg);
   }
+
+#login {
+  width:38.1%;
+  background-color: yellow;
+  display: inline-block;
+  float: right;
+  height: 100vh;
+}
+
+#scanning {
+  display: none;
+}

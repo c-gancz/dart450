@@ -9,14 +9,17 @@
 
 <body>
 
+  <!-- Code taken from user 2046 on CodePen: http://codepen.io/2046/pen/wJGJZv-->
   <div id="webcam">
       <video id="video" preload autoplay loop muted></video>
       <canvas id="canvas" width="900" height="700"></canvas>
   </div>
 
   <section id="login">
+    <h1 id="scanning">Finding medical records...</h1>
   </section>
 
+<!-- Tracking.js files and jQuery are stored on an online server -->
 <script src='https://cdnjs.cloudflare.com/ajax/libs/tracking.js/1.1.3/tracking-min.js'></script>
 <script src='https://cdnjs.cloudflare.com/ajax/libs/tracking.js/1.1.3/data/face-min.js'></script>
 <script src='https://cdnjs.cloudflare.com/ajax/libs/stats.js/r16/Stats.min.js'></script>
