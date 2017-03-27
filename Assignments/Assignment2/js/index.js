@@ -24,10 +24,10 @@ function faceTracker(){
 
     // Functions that change certain CSS properties of the tracking box on the face.
     event.data.forEach(function(rect) {
-      context.strokeStyle = 'yellow';
+      context.strokeStyle = '#fed402';
       context.strokeRect(rect.x, rect.y, rect.width, rect.height);
       context.font = 'bold 14px Helvetica';
-      context.fillStyle = "yellow";
+      context.fillStyle = "#fed402";
       context.lineWidth=5;
       context.fillText('x: ' + rect.x + 'px', rect.x + rect.width + 5, rect.y + 11);
       context.fillText('y: ' + rect.y + 'px', rect.x + rect.width + 5, rect.y + 22);
@@ -40,7 +40,19 @@ function faceTracker(){
   });
 };
 
-// This is the function that allows text to appear determining what the face tracker is scanning. 
+// This is the function that allows text to appear determining what the face tracker is scanning.
 function medicalScanning(){
-    $('#scanning').show();
+    // The various elements that the Virtual Doctor is hypothetically searching for to login.
+    var conditions = [
+      'Searching through medical archives',
+      "Getting patient's schedule",
+      'Scanning for emergency diagnoses',
+      "Analyzing if patient is human",
+      "Looking through patient's pharmaceuticals shopping records"
+    ]
+
+    // The variable that allows the elements in the conditions array to be chosen at random.
+    var randomConditions = conditions[Math.floor(Math.random() * conditions.length)];
+    // The h1 tag in my HTML will be a random element in my array.
+    $('#scanning').text(randomConditions);
 };
