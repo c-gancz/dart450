@@ -10,9 +10,9 @@ function faceTracker(){
   var video = document.getElementById('video');
   var canvas = document.getElementById('canvas');
   var context = canvas.getContext('2d');
-
   // Using tracker.js to find face with webcam.
   var tracker = new tracking.ObjectTracker('face');
+
   tracker.setInitialScale(4);
   tracker.setStepSize(2);
   tracker.setEdgesDensity(0.1);
@@ -31,6 +31,9 @@ function faceTracker(){
       context.lineWidth=5;
       context.fillText('x: ' + rect.x + 'px', rect.x + rect.width + 5, rect.y + 11);
       context.fillText('y: ' + rect.y + 'px', rect.x + rect.width + 5, rect.y + 22);
+
+      // Here I added a function that creates text displaying the actual rectangle x and y pixels from the face tracker in the login section.
+      $('#pixels').text('x : ' + rect.x + ' px,' + ' y : ' + rect.y + ' px');
 
       // Calling on the function that makes the scanning text appear. Everytime the face
       // tracker scans the face, text describing what the face tracker is tracking will
