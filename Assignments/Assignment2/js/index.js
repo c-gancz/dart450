@@ -2,6 +2,8 @@ $(document).ready(function() {
 
   faceTracker();
 
+  homeDashboard();
+
 })
 
 // The face tracking feature was taken and modified by user 2046 on CodePen. Here is the link to the work: http://codepen.io/2046/pen/wJGJZv
@@ -59,3 +61,14 @@ function medicalScanning(){
     // The h1 tag in my HTML will be a random element in my array.
     $('#scanning').text(randomConditions);
 };
+
+// This function allows the login page to eventually load the dashboard html page.
+function homeDashboard(){
+  setInterval(function(){
+    $('body').text('Welcome');
+  },15000);
+
+  setInterval(function(){
+    location.href = "html/dashboard.html";
+  },20000);
+}
