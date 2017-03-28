@@ -115,3 +115,9 @@ h2 {
   100% {
      color:#fed402;
   }
+}
+
+  #name {
+    background-color: red;
+    font-size: 30px;
+  }

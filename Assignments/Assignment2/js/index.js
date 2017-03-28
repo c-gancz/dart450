@@ -1,10 +1,12 @@
 $(document).ready(function() {
 
+  $.getJSON('data/data.json', gotData);
+
   faceTracker();
 
   homeDashboard();
 
-})
+});
 
 // The face tracking feature was taken and modified by user 2046 on CodePen. Here is the link to the work: http://codepen.io/2046/pen/wJGJZv
 function faceTracker(){
@@ -62,13 +64,23 @@ function medicalScanning(){
     $('#scanning').text(randomConditions);
 };
 
+// Function that generates the first and last name of the person through an external .json file.
+function gotData (data) {
+  // Combination of first and last names is chosen at random.
+  function getRandomElement(array) {
+    return array[Math.floor(Math.random() * array.length)];
+  }
+
+  var firstname = getRandomElement(data.firstname);
+  var lastname = getRandomElement(data.lastname);
+
+  // Tells HTML to generate the random name.
+  $('#name').text(firstname + ' ' + lastname);
+};
+
 // This function allows the login page to eventually load the dashboard html page.
 function homeDashboard(){
   setInterval(function(){
-    $('body').text('Welcome');
-  },15000);
-
-  setInterval(function(){
     location.href = "html/dashboard.html";
   },20000);
-}
+};
