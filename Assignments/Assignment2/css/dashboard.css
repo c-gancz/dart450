@@ -1,11 +1,13 @@
 @import url('https://fonts.googleapis.com/css?family=Righteous');
 @import url('https://fonts.googleapis.com/css?family=Open+Sans');
 
-/*COLOUR LEGEND
+/*LEGEND
 
 Yellow: #fed402;
 Dark blue: #10143e;
 Light blue: #1ca4d6;
+font-family: 'Righteous', cursive;
+font-family: 'Open Sans', sans-serif;
 
 */
 
@@ -17,4 +19,28 @@ Light blue: #1ca4d6;
 
 body {
   background-color: #10143e;
+}
+
+h1 {
+  font-family: 'Righteous', cursive;
+  color: #fed402;
+  font-size: 65px;
+}
+
+h2 {
+  font-family:'Open Sans', sans-serif;
+  /*color: #1ca4d6;*/
+  font-size: 30px;
+}
+
+#title {
+  width: 100%;
+  padding: 40px;
+}
+
+section {
+  width:16.45%;
+  height:300px;
+  background-color:#fed402;
+  display: inline-block;
 }
