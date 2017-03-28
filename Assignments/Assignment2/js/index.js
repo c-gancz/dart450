@@ -1,18 +1,29 @@
 $(document).ready(function() {
 
+  //This script uses an external JSON file.
+  $.getJSON('data/data.json', gotData);
+
   faceTracker();
 
   homeDashboard();
 
-  getName();
+
 });
-// The face tracking feature was taken and modified by user 2046 on CodePen. Here is the link to the work: http://codepen.io/2046/pen/wJGJZv
+
+///////////////////////// FUNCTIONS /////////////////////////////////
+
+
+// FUNCTION 1: To enable face tracking using tracking.js
+// The face tracking code was taken by user 2046 on CodePen and modified for my own use. Link to the work: http://codepen.io/2046/pen/wJGJZv
+
 function faceTracker(){
+
   // The variables call on various elements made with HTML5 canvas and the viewer's webcam.
   var video = document.getElementById('video');
   var canvas = document.getElementById('canvas');
   var context = canvas.getContext('2d');
-  // Using tracker.js to find face with webcam.
+
+  // Using tracking.js to find face with webcam.
   var tracker = new tracking.ObjectTracker('face');
 
   tracker.setInitialScale(4);
@@ -24,8 +35,9 @@ function faceTracker(){
   tracker.on('track', function(event) {
     context.clearRect(0, 0, canvas.width, canvas.height);
 
-    // Functions that change certain CSS properties of the tracking box on the face.
+    // Functions where I changed certain CSS properties of the tracking box on the face to meet the style of my website.
     event.data.forEach(function(rect) {
+
       context.strokeStyle = '#fed402';
       context.strokeRect(rect.x, rect.y, rect.width, rect.height);
       context.font = 'bold 14px Helvetica';
@@ -37,17 +49,18 @@ function faceTracker(){
       // Here I added a function that creates text displaying the actual rectangle x and y pixels from the face tracker in the login section.
       $('#pixels').text('x : ' + rect.x + ' px,' + ' y : ' + rect.y + ' px');
 
-      // Calling on the function that makes the scanning text appear. Everytime the face
-      // tracker scans the face, text describing what the face tracker is tracking will
-      // appear.
+      // Calling on the function that makes the random "what the doctor is scanning" appear.
       medicalScanning();
     });
   });
 };
 
-// This is the function that allows text to appear determining what the face tracker is scanning.
+
+// FUNCTION 2: Allows text to appear determining what the face tracker is hypothetically scanning/searching for.
+
 function medicalScanning(){
-    // The various elements that the Virtual Doctor is hypothetically searching for to login.
+
+    // An array of various elements that the Virtual Doctor is hypothetically searching for to login.
     var conditions = [
       'Searching through medical archives',
       "Getting patient's schedule",
@@ -58,30 +71,38 @@ function medicalScanning(){
 
     // The variable that allows the elements in the conditions array to be chosen at random.
     var randomConditions = conditions[Math.floor(Math.random() * conditions.length)];
-    // The h1 tag in my HTML will be a random element in my array.
+
+    // Telling my HTML to display this random chosen element from my array.
     $('#scanning').text(randomConditions);
 };
 
-function getName(){
-  $.getJSON('data/data.json', gotData);
-  // Function that generates the first and last name of the person through an external .json file.
+
+// FUNCTION 3: Creates a user profile by taking data from an external JSON file..
+// Data JSON file made with various lists from Dariusk Corpora at https://github.com/dariusk/corpora
+
   function gotData (data) {
-    // Combination of first and last names is chosen at random.
-    function getRandomElement(array) {
-      return array[Math.floor(Math.random() * array.length)];
-    }
 
-    var firstname = getRandomElement(data.firstname);
-    var lastname = getRandomElement(data.lastname);
+      // The function that allows me to get a random selection from the data in the JSON file.
+      function getRandomElement(array) {
+        return array[Math.floor(Math.random() * array.length)];
+      }
 
-    // Tells HTML to generate the random name.
-    $('#name').text(firstname + ' ' + lastname);
+      // The variables that use the random selection function and apply it to specific categories of the user profile.
+      var firstname = getRandomElement(data.firstname);
+      var lastname = getRandomElement(data.lastname);
+
+      // Tells HTML to generate the random user profile at a set time.
+      setInterval(function(){
+        $('#name').text(firstname + ' ' + lastname);
+      },3000);
   };
-};
 
-// This function allows the login page to eventually load the dashboard html page.
-function homeDashboard(){
-  setInterval(function(){
-    location.href = "html/dashboard.html";
-  },25000);
+
+// FUNCTION 4: Allows the login page to eventually load the Virtual Doctor dashboard page.
+
+  function homeDashboard(){
+    setInterval(function(){
+      location.href = "html/dashboard.html";
+    },25000);
+
 };
