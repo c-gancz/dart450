@@ -1,0 +1,20 @@
+@import url('https://fonts.googleapis.com/css?family=Righteous');
+@import url('https://fonts.googleapis.com/css?family=Open+Sans');
+
+/*COLOUR LEGEND
+
+Yellow: #fed402;
+Dark blue: #10143e;
+Light blue: #1ca4d6;
+
+*/
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #10143e;
+}

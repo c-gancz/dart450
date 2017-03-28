@@ -74,6 +74,7 @@ function medicalScanning(){
 
     // Telling my HTML to display this random chosen element from my array.
     $('#scanning').text(randomConditions);
+
 };
 
 
