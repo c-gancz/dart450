@@ -40,7 +40,7 @@ canvas {
 }
 
 h1 {
-  font-size: 55px;
+  font-size: 65px;
   font-family: 'Righteous', cursive;
   color: #fed402;
 }
@@ -117,7 +117,41 @@ h2 {
   }
 }
 
-  #name {
-    background-color: red;
+  #profile {
     font-size: 30px;
+    width:60%;
+    height:100vh;
+    margin: 0 auto;
+    padding-top: 175px;
+    display: none;
+  }
+
+  #profile h2 {
+    font-size: 30px;
+    margin-left: 60px;
+    margin-bottom:80px;
+  }
+
+  h4, h3 {
+    font-size: 30px;
+    font-family: 'Open Sans', sans-serif;
+    display: inline-block;
+  }
+
+  h4 {
+    color:#fed402;
+    text-transform: uppercase;
+    margin-right: 10px;
+    font-family: 'Righteous', cursive;
+    letter-spacing: 1px;
+  }
+
+  .profiletext {
+    width:100%;
+    margin-top: 20px;
+    margin-left: 60px;
+  }
+
+  h3 {
+    color:rgb(28, 164, 214);
   }

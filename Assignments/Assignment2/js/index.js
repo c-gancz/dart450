@@ -90,19 +90,38 @@ function medicalScanning(){
       // The variables that use the random selection function and apply it to specific categories of the user profile.
       var firstname = getRandomElement(data.firstname);
       var lastname = getRandomElement(data.lastname);
+      var age = getRandomElement(data.age);
+      var residence = getRandomElement(data.municipalities);
+      var diagnosis = getRandomElement(data.diagnosis);
 
       // Tells HTML to generate the random user profile at a set time.
       setInterval(function(){
+        // Show the user profile that was hidden with CSS.
+        $('#profile').show();
+
+        // Functions that make the HTML show the random name, age, location, and diagnosis.
         $('#name').text(firstname + ' ' + lastname);
-      },3000);
+        $('#age').text(age);
+        $('#location').text(residence);
+        $('#diagnosis').text(diagnosis);
+
+        // Functions that removes the initial webcam and login on the same page.
+        $('#webcam').remove();
+        $('#login').remove();
+
+        // This happens 15 seconds after the page loads.
+      },15000);
   };
 
 
 // FUNCTION 4: Allows the login page to eventually load the Virtual Doctor dashboard page.
 
   function homeDashboard(){
+
     setInterval(function(){
       location.href = "html/dashboard.html";
+
+    // This happens 25 seconds after the page loads.
     },25000);
 
 };
