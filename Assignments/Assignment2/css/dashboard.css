@@ -53,14 +53,16 @@ h2 {
   height:637px;
   float: left;
   margin-left: 2.5%;
+  padding: 20px;
 }
 
-section {
+#dashboard section {
   width:30%;
   height:300px;
   background-color:#1ca4d6;
   display: inline-block;
   margin-bottom: 2.5%;
+  position: relative;
 }
 
 .draggable {
@@ -72,11 +74,14 @@ section {
   width: 0px;
   height: 0px;
   border-style:solid;
-  border-color: #10143e;
-  border-width: 0 0 75px 75px;
+  border-color:#fed402;
+  border-width: 0 0 10px 10px;
   background: none;
   display: inline-block;
-  float: right;
+  float: left;
+  padding: 10px;
+  position: absolute;
+  bottom: 0;
 }
 
 .margin {
@@ -87,4 +92,23 @@ section {
 #dashboard h2 {
   font-family: 'Righteous', cursive;
   color:#fed402;
+  font-size: 40px;
+  text-transform: uppercase;
+  padding: 20px;
+}
+
+p {
+  font-size: 16px;
+  font-family: 'Open Sans', sans-serif;
+  color: #10143e;
+  padding: 0px 0px 20px 20px;
+}
+
+h3, h4 {
+  font-size: 16px;
+  font-family: 'Open Sans', sans-serif;
+}
+
+h3 {
+  text-transform: uppercase;
 }
