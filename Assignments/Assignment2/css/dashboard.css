@@ -44,3 +44,21 @@ section {
   background-color:#fed402;
   display: inline-block;
 }
+
+.draggable {
+  min-width: 50px;
+  width: 100px;
+  min-height: 50px;
+  height: 100px;
+  background: #EEE;
+  border: 1px solid #AAA;
+}
+
+.ui-resizable-se {
+  width: 0px;
+  height: 0px;
+  border-style: solid;
+  border-width: 0 0 16px 16px;
+  border-color: transparent transparent #AAA transparent;
+  background: none;
+}
