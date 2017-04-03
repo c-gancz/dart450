@@ -85,9 +85,6 @@ section {
 }
 
 #dashboard h2 {
-  display: block;
-  width: 100%;
-  height:225px;
   font-family: 'Righteous', cursive;
   color:#fed402;
 }
