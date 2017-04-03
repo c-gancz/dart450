@@ -38,8 +38,24 @@ h2 {
   padding: 40px;
 }
 
+#dashboard {
+  width:80%;
+  background-color: red;
+  display: inline-block;
+  margin-left: 2.5%;
+}
+
+#navigation {
+  width:15%;
+  background-color: yellow;
+  display: inline-block;
+  height:600px;
+  float: left;
+  margin-left: 2.5%;
+}
+
 section {
-  width:16.45%;
+  width:30%;
   height:300px;
   background-color:#fed402;
   display: inline-block;
@@ -47,11 +63,7 @@ section {
 
 .draggable {
   min-width: 50px;
-  width: 100px;
   min-height: 50px;
-  height: 100px;
-  background: #EEE;
-  border: 1px solid #AAA;
 }
 
 .ui-resizable-se {
@@ -59,6 +71,5 @@ section {
   height: 0px;
   border-style: solid;
   border-width: 0 0 16px 16px;
-  border-color: transparent transparent #AAA transparent;
   background: none;
 }
