@@ -16,16 +16,15 @@ $(document).ready(function() {
 
   $('#rearrange-off').click(rearrangeOff);
 
+  $('#audio-on').click(function(){
+      audioAssist();
+  });
+
   // Because the draggable element is an array, in order to disable the draggable function it needs to run through a loop.
   draggable = Draggable.create('.draggable');
   for (var i = 0; i < draggable.length; i++) {
     draggable[i].disable();
   }
-
-$('#audio-on').click(function(){
-    audioAssist();
-});
-
 
 });
 
