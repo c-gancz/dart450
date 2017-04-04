@@ -22,6 +22,8 @@ $(document).ready(function() {
     draggable[i].disable();
   }
 
+  audioAssist();
+
 });
 
 ///////////////////////////// FUNCTIONS ////////////////////////////////
@@ -90,3 +92,59 @@ function rearrangeOff(){
     draggable[i].disable();
   }
 };
+
+//FUNCTION 7: Using blast.js and responsiveVoice.js to read out all the text on the dashboard.
+  function audioAssist(){
+
+    // Setting the variables for the type of voice and parameters in responsiveVoice.
+    var voice = 'US English Female';
+    var voiceParameters = {
+      pitch: 1,
+      rate: 1.2,
+    }
+
+    // Telling the entire body of HTML to be "blasted" (read all the text content on the page).
+    $('body').blast({
+      // Telling blast to pick up only sentences.
+      delimiter: 'sentence'
+    });
+
+    // Connecting the text that is picked up blast.js and have responsiveVoice.js read it out.
+    $('.blast').mouseover(function () {
+      responsiveVoice.speak($(this).text(),voice,voiceParameters);
+
+      // The text being read out is highlighted by changing the background-color of the sentence.
+      $(this).css({
+        'background-color':'yellow'
+      });
+    });
+
+      // Telling my background-color to return to its original colour after hovering out of the text.
+      $('.blast').mouseout(function(){
+        $(this).css({
+          'background-color':'rgba(255, 255, 255, 0)'
+        });
+      })
+
+      // Functions telling responsiveVoice what to say when user hovers over a button.
+      $('#audio-off').mouseover(function(){
+        responsiveVoice.speak('Turn off audio assist',voice,voiceParameters);
+      });
+
+      $('#enlarge-on').mouseover(function(){
+        responsiveVoice.speak('Click to enlarge',voice,voiceParameters);
+      });
+
+      $('#enlarge-off').mouseover(function(){
+        responsiveVoice.speak('Click to lock your services in place',voice,voiceParameters);
+      });
+
+      $('#rearrange-on').mouseover(function(){
+        responsiveVoice.speak('Click to rearrange your services',voice,voiceParameters);
+      });
+
+      $('#rearrange-off').mouseover(function(){
+        responsiveVoice.speak('Click to lock your services in place',voice,voiceParameters);
+      });
+
+  };
