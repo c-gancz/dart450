@@ -107,21 +107,19 @@ p {
   padding: 0px 0px 20px 20px;
 }
 
-h3, h4 {
-  font-size: 16px;
-  font-family: 'Open Sans', sans-serif;
-  line-height: 30px;
-}
-
 h3 {
   text-transform: uppercase;
   color:#1ca4d6;
+  font-family: 'Righteous', cursive;
+  letter-spacing: 1px;
+  font-size: 24px;
 }
 
 h4 {
     font-weight: normal;
     color: #10143e;
     padding-left: 10px;
+    font-family: 'Open Sans', sans-serif;
 }
 
 #profile {
@@ -134,4 +132,9 @@ h4 {
 
 button {
   cursor: pointer;
+}
+
+.profileheader {
+  margin-top: 15px;
+  font-weight: bold;
 }
