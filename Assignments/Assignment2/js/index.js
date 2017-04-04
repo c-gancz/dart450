@@ -89,11 +89,11 @@ function medicalScanning(){
       }
 
       // The variables that use the random selection function and apply it to specific categories of the user profile.
-      var firstname = getRandomElement(data.firstname);
-      var lastname = getRandomElement(data.lastname);
-      var age = getRandomElement(data.age);
-      var residence = getRandomElement(data.municipalities);
-      var diagnosis = getRandomElement(data.diagnosis);
+      firstname = getRandomElement(data.firstname);
+      lastname = getRandomElement(data.lastname);
+      age = getRandomElement(data.age);
+      residence = getRandomElement(data.municipalities);
+      diagnosis = getRandomElement(data.diagnosis);
 
       // Tells HTML to generate the random user profile at a set time.
       setInterval(function(){
@@ -120,7 +120,7 @@ function medicalScanning(){
   function homeDashboard(){
 
     setInterval(function(){
-      location.href = "html/dashboard.html";
+      location.href = "html/dashboard.html?name=firstname";
 
     // This happens 25 seconds after the page loads.
     },25000);
