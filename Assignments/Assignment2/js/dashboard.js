@@ -22,7 +22,10 @@ $(document).ready(function() {
     draggable[i].disable();
   }
 
-  audioAssist();
+$('#audio-on').click(function(){
+    audioAssist();
+});
+
 
 });
 
