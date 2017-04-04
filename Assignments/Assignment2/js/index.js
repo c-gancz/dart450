@@ -121,7 +121,7 @@ function medicalScanning(){
 
     setInterval(function(){
       // I need the randomly generated profile to also appear on my dashboard.html page. I do this by adding the information to the URL leading to dashboard.html (through QueryString).
-      var profileText = "?name=" + encodeURI(firstname) + encodeURI(lastname) + "&age=" + encodeURI(age) + "&residence=" + encodeURI(residence) + "&diagnosis=" + encodeURI(diagnosis);
+      var profileText = "?name=" + encodeURI(firstname) + " " + encodeURI(lastname) + "&age=" + encodeURI(age) + "&residence=" + encodeURI(residence) + "&diagnosis=" + encodeURI(diagnosis);
       var link = 'html/dashboard.html';
 
       // The function that combines my dashboard.html URL with the information of the profile, so I can use it in my dashboard.html.
