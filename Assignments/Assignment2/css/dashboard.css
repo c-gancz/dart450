@@ -121,7 +121,6 @@ h3 {
 h4 {
     font-weight: normal;
     color: #10143e;
-    cursor: pointer;
     padding-left: 10px;
 }
 
@@ -131,4 +130,8 @@ h4 {
 
 #offrearrange {
   display:none;
+}
+
+button {
+  cursor: pointer;
 }
