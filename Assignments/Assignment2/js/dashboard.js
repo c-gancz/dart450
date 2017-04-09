@@ -7,6 +7,9 @@ $(document).ready(function() {
   // Calling the function to add the profile information to the assistant.
   addProfile();
 
+  // Calling the function to change the background-color of the buttons when enabling/disabling the assistant options.
+  buttonColour();
+
   //Functions that allow the buttons on the assistant to enable/disable audio, resizing, and rearranging.
   $('#enlarge-on').click(enlargeOn);
 
@@ -16,10 +19,8 @@ $(document).ready(function() {
 
   $('#rearrange-off').click(rearrangeOff);
 
-  $('#audio-on').click(function(){
-      audioAssist();
-  });
-
+  $('#audio-on').click(audioAssist);
+  
   // Because the draggable element is an array, in order to disable the draggable function it needs to run through a loop.
   draggable = Draggable.create('.draggable');
   for (var i = 0; i < draggable.length; i++) {
@@ -134,13 +135,88 @@ function rearrangeOff(){
         $('.blast').mouseover(function () {
           responsiveVoice.cancel();
 
-          // The background-color will be transparent as opposed to yellow when the audio-assist is turned off. 
+          // The background-color will be transparent as opposed to yellow when the audio-assist is turned off.
           $(this).css({
             'background-color':'rgba(255, 255, 255, 0)'
           });
-        });
+      });
 
-});
-
-
+    });
   };
+
+// FUNCTION 8: This function allows the buttons' background color to change when the enlarging, displacing, and audio is enabled or disabled.
+function buttonColour(){
+
+  $('#enlarge-on').click(function(){
+    // When the enlarge button is on, its background-color becomes light blue.
+    $('#enlarge-on').css({
+      'background-color':'#1ca4d6'
+    });
+
+    // When the enlarge-on button is clicked, the enlarge-off returns to its original background-color.
+    $('#enlarge-off').css({
+      'background-color':'#fed402'
+    });
+  });
+
+  $('#enlarge-off').click(function(){
+    // When the enlarge-off button is clicked, the enlarge-on returns to its original background-color.
+    $('#enlarge-on').css({
+      'background-color':'#fed402'
+    });
+
+    // When the enlarge-off button is clicked, its background-color becomes light blue.
+    $('#enlarge-off').css({
+      'background-color':'#1ca4d6'
+    });
+  });
+
+  $('#rearrange-on').click(function(){
+    // When the rearrange button is on, its background-color becomes light blue.
+    $('#rearrange-on').css({
+      'background-color':'#1ca4d6'
+    });
+
+    // When the rearrange-on button is clicked, the rearrange-off returns to its original background-color.
+    $('#rearrange-off').css({
+      'background-color':'#fed402'
+    });
+  });
+
+  $('#rearrange-off').click(function(){
+    // When the rearrange-off button is clicked, the rearrange-on returns to its original background-color.
+    $('#rearrange-on').css({
+      'background-color':'#fed402'
+    });
+
+    // When the rearrange-off button is clicked, its background-color becomes light blue.
+    $('#rearrange-off').css({
+      'background-color':'#1ca4d6'
+    });
+  });
+
+  $('#audio-on').click(function(){
+    // When the audio button is on, its background-color becomes light blue.
+    $('#audio-on').css({
+      'background-color':'#1ca4d6'
+    });
+
+    // When the audio-on button is clicked, the audio-off returns to its original background-color.
+    $('#audio-off').css({
+      'background-color':'#fed402'
+    });
+  });
+
+  $('#audio-off').click(function(){
+    // When the audio-off button is clicked, the audio-on returns to its original background-color.
+    $('#audio-on').css({
+      'background-color':'#fed402'
+    });
+
+    // When the audio-off button is clicked, its background-color becomes light blue.
+    $('#audio-off').css({
+      'background-color':'#1ca4d6'
+    });
+  });
+
+};
