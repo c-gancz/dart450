@@ -20,7 +20,7 @@ $(document).ready(function() {
   $('#rearrange-off').click(rearrangeOff);
 
   $('#audio-on').click(audioAssist);
-  
+
   // Because the draggable element is an array, in order to disable the draggable function it needs to run through a loop.
   draggable = Draggable.create('.draggable');
   for (var i = 0; i < draggable.length; i++) {
@@ -103,13 +103,13 @@ function rearrangeOff(){
     var voice = 'US English Female';
     var voiceParameters = {
       pitch: 1,
-      rate: 1.2,
+      rate: 1,
     }
 
     // Telling the entire body of HTML to be "blasted" (read all the text content on the page).
     $('body').blast({
       // Telling blast to pick up only sentences.
-      delimiter: 'sentence'
+      delimiter: 'element'
     });
 
     // Connecting the text that is picked up blast.js and have responsiveVoice.js read it out.
