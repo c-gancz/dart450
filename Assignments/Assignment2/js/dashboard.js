@@ -128,25 +128,19 @@ function rearrangeOff(){
         });
       })
 
-      // Functions telling responsiveVoice what to say when user hovers over a button.
-      $('#audio-off').mouseover(function(){
-        responsiveVoice.speak('Turn off audio assist',voice,voiceParameters);
-      });
+      // The function cancelling the responsiveVoice function when you click "off" the audio assist.
+      $('#audio-off').click(function(){
 
-      $('#enlarge-on').mouseover(function(){
-        responsiveVoice.speak('Click to enlarge',voice,voiceParameters);
-      });
+        $('.blast').mouseover(function () {
+          responsiveVoice.cancel();
 
-      $('#enlarge-off').mouseover(function(){
-        responsiveVoice.speak('Click to lock your services in place',voice,voiceParameters);
-      });
+          // The background-color will be transparent as opposed to yellow when the audio-assist is turned off. 
+          $(this).css({
+            'background-color':'rgba(255, 255, 255, 0)'
+          });
+        });
 
-      $('#rearrange-on').mouseover(function(){
-        responsiveVoice.speak('Click to rearrange your services',voice,voiceParameters);
-      });
+});
 
-      $('#rearrange-off').mouseover(function(){
-        responsiveVoice.speak('Click to lock your services in place',voice,voiceParameters);
-      });
 
   };
