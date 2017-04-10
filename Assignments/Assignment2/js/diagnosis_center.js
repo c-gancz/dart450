@@ -1,35 +1,38 @@
 
 $(document).ready(function(){
 
-  // The function that allows elements to appear/disappear in the diagnosis center
-  // while resizing it.
-  $('#diagnosiscenter').resizable({
+  // Only when the enlarge button is on will this function happen.
+  $('#enlarge-on').click(function(){
 
-      // Function from jQuery UI allowing me to get the changing width and height values
-      // of the object that is being resized.
-      resize: function(event, ui) {
-            var w = ui.size.width;
-            var h = ui.size.height;
+    // The function that allows elements to appear/disappear in the diagnosis center
+    // while resizing it.
+    $('#diagnosiscenter').resizable({
 
-            // If statement allowing diagnosisReveal(); to only appear when the width
-            // is larger than 400.
-            if (w > 400) {
-              diagnosisReveal();
-            }
+        // Function from jQuery UI allowing me to get the changing width and height values
+        // of the object that is being resized.
+        resize: function(event, ui) {
+              var w = ui.size.width;
+              var h = ui.size.height;
 
-            // Else statement making diagnosisConceal(); happen when width is smaller
-            // than 400.
-            else {
-              diagnosisConceal();
-            }
+              // If statement allowing diagnosisReveal(); to only appear when the width
+              // is larger than 400.
+              if (w > 400) {
+                diagnosisReveal();
+              }
 
-            console.log(ui.size);
-            // Telling my console to log the changing width and height values.
+              // Else statement making diagnosisConceal(); happen when width is smaller
+              // than 400.
+              else {
+                diagnosisConceal();
+              }
 
-        } // Closing the jQuery UI resize function.
-  });// Closing the entire diagnosis center reveal/conceal function.
+              console.log(ui.size);
+              // Telling my console to log the changing width and height values.
 
+          } // Closing the jQuery UI resize function.
+    }); // Closing the entire diagnosis center reveal/conceal function.
 
+}); // Closing the function of the enlarge-on button.
 
 });
 
@@ -46,7 +49,7 @@ function diagnosisReveal(){
 };
 
 // FUNCTION 2: The elements that are concealed when the width of the diagnosis center
-// minimizes to a certain size. 
+// minimizes to a certain size.
 function diagnosisConceal(){
 
   $('#diagnosiscenter').css({
