@@ -15,8 +15,8 @@ $(document).ready(function(){
               var heightDiagnosis = ui.size.height;
 
               // If statement allowing diagnosisReveal(); to only appear when the width
-              // is larger than 400.
-              if (widthDiagnosis > 400) {
+              // is larger than 500px and height longer than 600px.
+              if (widthDiagnosis > 500 && heightDiagnosis > 600) {
                 diagnosisReveal();
               }
 
@@ -42,9 +42,13 @@ $(document).ready(function(){
 // FUNCTION 1: What appears when the width of the diagnosis center reaches a certain number.
 function diagnosisReveal(){
 
+  // Make the section background-color become red.
   $('#diagnosiscenter').css({
-    'background-color':'red'
+    'background-color':'red',
   });
+
+  // Change certain css elements on reveal by adding a class through jQuery.
+  $('#diagnosiscenter p').addClass("p-diagnosisreveal");
 
   // Function that makes the diagnosis-reveal div appear.
   $('#diagnosis-reveal').show();
@@ -58,10 +62,16 @@ function diagnosisReveal(){
 // minimizes to a certain size.
 function diagnosisConceal(){
 
+  // Make the diagnosis center background-color return to its original colour.
   $('#diagnosiscenter').css({
-    'background-color':'blue'
+    'background-color':'#1ca4d6'
   });
 
+  // When minimized, the class is removed.
+  $('p').removeClass("p-diagnosisreveal");
+
+  // When minimized, certain elements become concealed.
+  $('#diagnosis-reveal').hide();
 };
 
 // FUNCTION 3: Animated pie chart with percentage of diagnosis.
