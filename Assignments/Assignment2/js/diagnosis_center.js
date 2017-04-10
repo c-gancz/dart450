@@ -46,6 +46,9 @@ function diagnosisReveal(){
     'background-color':'red'
   });
 
+  // Function that makes the diagnosis-reveal div appear.
+  $('#diagnosis-reveal').show();
+
 };
 
 // FUNCTION 2: The elements that are concealed when the width of the diagnosis center
