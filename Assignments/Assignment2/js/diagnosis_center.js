@@ -21,7 +21,7 @@ $(document).ready(function(){
               }
 
               // Else statement making diagnosisConceal(); happen when width is smaller
-              // than 400.
+              // than 500px and height smaller than 600px.
               else {
                 diagnosisConceal();
               }
