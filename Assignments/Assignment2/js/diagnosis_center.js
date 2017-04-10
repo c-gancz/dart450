@@ -50,12 +50,16 @@ function diagnosisReveal(){
   // Change certain css elements on reveal by adding a class through jQuery.
   $('#diagnosiscenter p').addClass("p-diagnosisreveal");
 
+  // Make image become larger when the diagnosis center is expanded.
+  $('#diagnosiscenter img').addClass("svg");
+
   // Function that makes the diagnosis-reveal div appear.
   $('#diagnosis-reveal').show();
 
   // Having the pie chart only appear when the diagnosis center is enlarged.
   pieChart();
 
+  $('#diagnosiscenter p').hide();
 };
 
 // FUNCTION 2: The elements that are concealed when the width of the diagnosis center
@@ -70,8 +74,13 @@ function diagnosisConceal(){
   // When minimized, the class is removed.
   $('p').removeClass("p-diagnosisreveal");
 
+  // Make image return to its original size.
+  $('#diagnosiscenter img').removeClass("svg");
+
   // When minimized, certain elements become concealed.
   $('#diagnosis-reveal').hide();
+
+  $('#diagnosiscenter p').show();
 };
 
 // FUNCTION 3: Animated pie chart with percentage of diagnosis.
@@ -81,6 +90,7 @@ function pieChart(){
 // Code simply copy and pasted, didn't change anything here.
 /////////////// YOU CAN MINIMIZE THE CODE STARTING HERE. THERE WILL BE SIGN TO STOP. ///////////////////////
   var pieChart = function (targetId, data, options) {
+    console.log(data);
     // Polyfill
     (function() {
         var vendors = ['webkit', 'moz'];
@@ -169,7 +179,7 @@ function pieChart(){
             ctx.stroke();
 
             ctx.save();
-            ctx.fillStyle = '#000';
+            ctx.fillStyle = '#fff';
             ctx.textAlign = 'center';
             ctx.textBaseline = 'middle';
             ctx.font = this.options.font || '12px sans-serif';
@@ -265,21 +275,32 @@ function pieChart(){
 $(document).ready(function(event) {
 // This is the code I modified to fit my website. I could change various styling elements
 // and the time of the pie chart animation.
+
+  // Variables indicating that I want a random number generated for the percentage of likelihood of the illness/disease.
+  var piechartOne = { id: 'a', data:Math.floor(Math.random() * 100) + 1, color: '#fed402'};
+  var piechartTwo = { id: 'b', data:Math.floor(Math.random() * 100) + 1, color: '#1ca4d6' };
+  var pieChartThree = { id: 'c', data:Math.floor(Math.random() * 100) + 1, color: '#fff' };
+
   pieChart('chart', [
-        { id: 'a', data: 30, color: 'blue' },
-        { id: 'b', data: 12, color: '#ff9800' },
-        { id: 'c', data: 4, color: '#0a0' },
+        // The pie chart calls these variables and random numbers are generated.
+        piechartOne,
+        piechartTwo,
+        pieChartThree
     ],{
   	time: 1.2,
     radius: 70,
-    width: 50,
-    font: '13px sans-serif',
-    labelMargin: 12,
+    width: 40,
+    font: 'bold 24px Open Sans',
+    labelMargin: 25,
     offset: { x: 0, y: 0 },
     click: function (target) { console.log(target); }
   });
 
-  console.log('######');
+  console.log(piechartOne.data);
+
+  $('#percentage').text(piechartOne.data + 'HELLO');
+
+
 },2000);
 
 };

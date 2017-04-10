@@ -18,3 +18,16 @@
 .redbkg {
   background-color: red;
 }
+
+.svg {
+  width:200px;
+  float: right;
+  margin-right:15px;
+  margin-top: -110px;
+}
+
+#chart {
+  margin-top: 20px;
+  color:white;
+  font-weight:bold;
+}
