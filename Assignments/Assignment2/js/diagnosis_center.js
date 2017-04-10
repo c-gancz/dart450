@@ -69,6 +69,7 @@ function diagnosisConceal(){
 function pieChart(){
 
 // Code simply copy and pasted, didn't change anything here.
+/////////////// YOU CAN MINIMIZE THE CODE STARTING HERE. THERE WILL BE SIGN TO STOP. ///////////////////////
   var pieChart = function (targetId, data, options) {
     // Polyfill
     (function() {
@@ -249,9 +250,11 @@ function pieChart(){
 		this.animate();
 }
 
+///////////////////////////////   YOU CAN STOP MINIMIZING THE CODE HERE. ////////////////////////////////////
+
 $(document).ready(function(event) {
 // This is the code I modified to fit my website. I could change various styling elements
-// and the time of the animation.
+// and the time of the pie chart animation.
   pieChart('chart', [
         { id: 'a', data: 30, color: 'blue' },
         { id: 'b', data: 12, color: '#ff9800' },
