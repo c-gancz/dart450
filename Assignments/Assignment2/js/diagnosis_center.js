@@ -30,7 +30,7 @@ $(document).ready(function(){
 
               if (widthDiagnosis > 500 && heightDiagnosis > 1000) {
                 // The user must continue to stretch the section until the drag and drop feature can be seen.
-                dragDrop();
+                // dragDrop();
               }
 
               console.log(ui.size);
