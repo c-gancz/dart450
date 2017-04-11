@@ -1,6 +1,8 @@
 
 $(document).ready(function(){
 
+  $.getJSON('../data/data.json', getDiagnosis);
+
   // Only when the enlarge button is on will this function happen.
   $('#enlarge-on').click(function(){
 
@@ -307,17 +309,34 @@ $(document).ready(function(event) {
   // FUNCTION 4: Adding random diagnoses to the randomly generated percentages.
 
     $('#chartValue1').text(
-      piechartOne.data + '% change of getting'
+      // Using the existing randomly generated percentage and adding it to the randomly generated diagnosis.
+      piechartOne.data + ' %: ' + diagnosis1
     );
 
     $('#chartValue2').text(
-      piechartTwo.data + '% change of getting'
+      piechartTwo.data + ' %: ' + diagnosis2
     );
 
     $('#chartValue3').text(
-      pieChartThree.data + '% change of getting'
+      pieChartThree.data + ' %: ' + diagnosis3
     );
 
 },2000); // Closing the piechart function which I modified.
 
 }; // Closing all of the functions attributed to the piechart.
+
+// FUNCTION 5: The function that allows me to get a random diagnosis from the data in the JSON file.
+function getDiagnosis (data) {
+
+
+    function getRandomElement(array) {
+      return array[Math.floor(Math.random() * array.length)];
+    }
+
+    // Attributing universal variables to get random diagnoses from data file.
+    diagnosis1 = getRandomElement(data.diagnosis);
+    diagnosis2 = getRandomElement(data.diagnosis);
+    diagnosis3 = getRandomElement(data.diagnosis);
+
+
+};
