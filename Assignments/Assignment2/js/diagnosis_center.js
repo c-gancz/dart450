@@ -3,6 +3,7 @@ $(document).ready(function(){
 
   $.getJSON('../data/data.json', getDiagnosis);
 
+
   // Only when the enlarge button is on will this function happen.
   $('#enlarge-on').click(function(){
 
@@ -291,10 +292,12 @@ $(document).ready(function(event) {
 // This is the code I modified to fit my website. I could change various styling elements
 // and the time of the pie chart animation.
 
-  // Variables indicating that I want a random number generated for the percentage of likelihood of the illness/disease.
-  var mathOne = Math.floor(Math.random() * 100) + 1;
-  var mathTwo = Math.floor(Math.random() * 100) + 1;
-  var mathThree = Math.floor(Math.random() * 100) + 1;
+  // Variables indicating that I want a random number generated for the percentage of likelihood of the illness/disease
+  // while making sure they add up to 100 for the percentage
+
+  var mathOne = Math.floor(Math.random() * 90) + 1;
+  var mathTwo = Math.floor(Math.random() * (95 - mathOne)) + 1; 
+  var mathThree = 100 - mathTwo - mathOne;
 
   // Variables placing these randomly generated numbers in objects.
   var piechartOne = { id: 'a', data:mathOne, color: '#fed402'};
@@ -353,181 +356,29 @@ function getDiagnosis (data) {
 // FUNCTION 6: Drag and drop feature. Code inspired and modified from Borrys Hasian at http://codepen.io/borryshasian/pen/yyaaWQ
 // TO KEEP EDITING FROM HERE
   function dragDrop(){
-    (function() {
-      var dropArea, dropAreaColor, dropAreaHoverColor, isDropped, item1, item1OriginX, item1OriginY, mainScreen, mainScreenHeight, mainScreenWidth, undoButton;
+    $('li').bind('dragstart', function(event) {
+     event.originalEvent.dataTransfer.setData("text/plain",  event.target.getAttribute('id'));
+   });
 
-      mainScreenWidth = 400;
+   $('ul').bind('dragover', function(event) {
+     event.preventDefault();
+   });
 
-      mainScreenHeight = 300;
+   $('ul').bind('dragenter', function(event) {
+     $(this).addClass("over");
+   });
 
-      isDropped = false;
+   $('ul').bind('dragleave drop', function(event) {
+     $(this).removeClass("over");
+   });
 
-      mainScreen = new Layer({
-        backgroundColor: "rgba(255, 255, 255, 0)",
-        width: mainScreenWidth,
-        height: mainScreenHeight,
-        y: 16,
-        opacity: .85
-      });
+   $('li').bind('drop', function(event) {
+     return false;
+   });
 
-      // Adjust the margin of the drag and drop
-      mainScreen.style = {
-        marginTop: "975px",
-        marginLeft: "300px"
-      };
-
-      mainScreen.centerX();
-
-      window.onresize = function() {
-        return mainScreen.centerX();
-      };
-
-      item1OriginX = 16;
-
-      item1OriginY = 32;
-
-      item1 = new Layer({
-        width: 128,
-        height: 88,
-        backgroundColor: "#74a5d9",
-        x: item1OriginX,
-        y: item1OriginY,
-      });
-
-      item1.superLayer = mainScreen;
-
-      item1.draggable.enabled = true;
-
-      dropAreaColor = "#df948e";
-
-      dropAreaHoverColor = "#df4e42";
-
-      dropArea = new Layer({
-        width: mainScreenWidth - 32,
-        height: mainScreenHeight / 3,
-        backgroundColor: dropAreaColor,
-        maxY: mainScreenHeight - 16,
-      });
-
-      dropArea.superLayer = mainScreen;
-
-      dropArea.centerX();
-
-      dropArea.placeBehind(item1);
-
-      undoButton = new Layer({
-        width: 104,
-        height: 32,
-        image: "https://s3-us-west-2.amazonaws.com/s.cdpn.io/211619/Undo_Button.png",
-        midX: dropArea.midX,
-        midY: dropArea.midY,
-        opacity: 0,
-      });
-
-      undoButton.superLayer = mainScreen;
-
-      undoButton.sendToBack();
-
-      item1.on(Events.DragStart, function() {
-
-        item1.animate({
-          properties: {
-            scale: 1.2
-          },
-          curve: "ease-in",
-          time: .2
-        });
-      });
-
-      item1.on(Events.DragMove, function() {
-        if (item1.midY > dropArea.y) {
-          dropArea.backgroundColor = dropAreaHoverColor;
-          return dropArea.animate({
-            properties: {
-              scale: 1.05
-            },
-            time: .2
-          });
-        } else {
-          dropArea.backgroundColor = dropAreaColor;
-          return dropArea.animate({
-            properties: {
-              scale: 1
-            },
-            time: .2
-          });
-        }
-      });
-
-      item1.on(Events.DragEnd, function() {
-        if (item1.midY > dropArea.y) {
-          isDropped = true;
-          item1.animate({
-            properties: {
-              midX: dropArea.midX,
-              midY: dropArea.midY,
-              scale: .2,
-              opacity: 0
-            },
-            curve: "spring( 300, 20, 0 )"
-          });
-
-          // When illness is brought to the delete drag and drop center, there will be a message saying it was deleted.
-          $('.delete').show();
-
-          undoButton.bringToFront();
-          undoButton.animate({
-            properties: {
-              opacity: 1
-            },
-            curve: "ease-in-out"
-          });
-        } else {
-          item1.animate({
-            properties: {
-              x: item1OriginX,
-              y: item1OriginY,
-              scale: 1
-            },
-            curve: "spring( 300, 15, 0 )"
-          });
-        }
-        dropArea.backgroundColor = dropAreaColor;
-        return dropArea.animate({
-          properties: {
-            scale: 1
-          },
-          curve: "spring( 300, 15, 0 )"
-        });
-      });
-
-      undoButton.on(Events.Click, function() {
-        if (isDropped) {
-          item1.animate({
-            properties: {
-              x: item1OriginX,
-              y: item1OriginY,
-              scale: 1,
-              opacity: 1
-            },
-            curve: "spring( 300, 15, 0 )"
-
-          });
-
-          // When illness is brought to the delete drag and drop center, there will be a message saying it was deleted.
-          $('.delete').hide();
-
-          dropArea.scale = 0.95;
-          dropArea.animate({
-            properties: {
-              scale: 1
-            },
-            curve: "spring( 300, 15, 0 )"
-          });
-          undoButton.sendToBack();
-          return undoButton.opacity = 0;
-        }
-      });
-
-    }).call(this);
+   $('ul').bind('drop', function(event) {
+     var listitem = event.originalEvent.dataTransfer.getData("text/plain");
+     event.target.appendChild(document.getElementById(listitem));
+     event.preventDefault();
+   });
   };
