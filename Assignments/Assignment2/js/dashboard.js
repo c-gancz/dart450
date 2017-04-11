@@ -19,7 +19,17 @@ $(document).ready(function() {
 
   $('#rearrange-off').click(rearrangeOff);
 
-  $('#audio-on').click(audioAssist);
+  $('#audio-on').click(function(){
+
+      // Calling the function that generates the responsive voice.
+      audioAssist();
+
+      // Calling the voice to resume once the audio-on button is clicked after the audio-off button was clicked.
+      responsiveVoice.resume();
+
+
+  });
+
 
   // Because the draggable element is an array, in order to disable the draggable function it needs to run through a loop.
   draggable = Draggable.create('.draggable');
@@ -116,6 +126,7 @@ function rearrangeOff(){
     $('.blast').mouseover(function () {
       responsiveVoice.speak($(this).text(),voice,voiceParameters);
 
+
       // The text being read out is highlighted by changing the background-color of the sentence.
       $(this).css({
         'background-color':'black'
@@ -127,13 +138,21 @@ function rearrangeOff(){
         $(this).css({
           'background-color':'rgba(255, 255, 255, 0)'
         });
+
+        // Stop the voice from playing after the user has hovered away from the text.
+        responsiveVoice.cancel();
       })
 
       // The function cancelling the responsiveVoice function when you click "off" the audio assist.
       $('#audio-off').click(function(){
 
+        // Telling the responsiveVoice to pause its voice while the button is clicked audio-off.
+        responsiveVoice.pause();
+
         $('.blast').mouseover(function () {
-          responsiveVoice.cancel();
+
+          // Telling the responsiveVoice to pause its function connecting it to blast.js while the button is clicked audio-off.
+          responsiveVoice.pause();
 
           // The background-color will be transparent as opposed to yellow when the audio-assist is turned off.
           $(this).css({
