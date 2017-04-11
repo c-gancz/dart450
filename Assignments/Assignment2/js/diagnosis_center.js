@@ -308,18 +308,18 @@ $(document).ready(function(event) {
 
   // FUNCTION 4: Adding random diagnoses to the randomly generated percentages.
 
-    $('#chartValue1').text(
-      // Using the existing randomly generated percentage and adding it to the randomly generated diagnosis.
-      piechartOne.data + ' %: ' + diagnosis1
-    );
+    // Using the existing randomly generated percentage and adding it to the randomly generated diagnosis.
+    $('#chartValue1').text(piechartOne.data + ' % ');
 
-    $('#chartValue2').text(
-      piechartTwo.data + ' %: ' + diagnosis2
-    );
+    $('#chartDiagnosis1').text(diagnosis1);
 
-    $('#chartValue3').text(
-      pieChartThree.data + ' %: ' + diagnosis3
-    );
+    $('#chartValue2').text(piechartTwo.data + ' % ');
+
+    $('#chartDiagnosis2').text(diagnosis2);
+
+    $('#chartValue3').text(pieChartThree.data + ' % ');
+
+    $('#chartDiagnosis3').text(diagnosis3);
 
 },2000); // Closing the piechart function which I modified.
 

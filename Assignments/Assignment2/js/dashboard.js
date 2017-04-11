@@ -118,7 +118,7 @@ function rearrangeOff(){
 
       // The text being read out is highlighted by changing the background-color of the sentence.
       $(this).css({
-        'background-color':'yellow'
+        'background-color':'black'
       });
     });
 
