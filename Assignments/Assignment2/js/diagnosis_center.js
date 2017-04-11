@@ -184,7 +184,10 @@ function pieChart(){
             ctx.textBaseline = 'middle';
             ctx.font = this.options.font || '12px sans-serif';
             ctx.fillText(
-              this.data[i].data,
+
+              // Add text beside the randomly generated data number
+              this.data[i].data + ' %',
+
               Math.sin(-(angle + this.data[i].angle/2) * part + Math.PI) * (radius + width / 2 + (this.options.labelMargin || 10)) + this.center.x + this.offset.x,
               Math.cos(-(angle + this.data[i].angle/2) * part + Math.PI) * (radius + width / 2 + (this.options.labelMargin || 10)) + this.center.y + this.offset.y
             );
@@ -277,9 +280,14 @@ $(document).ready(function(event) {
 // and the time of the pie chart animation.
 
   // Variables indicating that I want a random number generated for the percentage of likelihood of the illness/disease.
-  var piechartOne = { id: 'a', data:Math.floor(Math.random() * 100) + 1, color: '#fed402'};
-  var piechartTwo = { id: 'b', data:Math.floor(Math.random() * 100) + 1, color: '#1ca4d6' };
-  var pieChartThree = { id: 'c', data:Math.floor(Math.random() * 100) + 1, color: '#fff' };
+  var mathOne = Math.floor(Math.random() * 100) + 1;
+  var mathTwo = Math.floor(Math.random() * 100) + 1;
+  var mathThree = Math.floor(Math.random() * 100) + 1;
+
+  // Variables placing these randomly generated numbers in objects.
+  var piechartOne = { id: 'a', data:mathOne, color: '#fed402'};
+  var piechartTwo = { id: 'b', data:mathTwo, color: '#1ca4d6' };
+  var pieChartThree = { id: 'c', data:mathThree, color: '#fff' };
 
   pieChart('chart', [
         // The pie chart calls these variables and random numbers are generated.
@@ -291,16 +299,25 @@ $(document).ready(function(event) {
     radius: 70,
     width: 40,
     font: 'bold 24px Open Sans',
-    labelMargin: 25,
+    labelMargin: 30,
     offset: { x: 0, y: 0 },
     click: function (target) { console.log(target); }
   });
 
-  console.log(piechartOne.data);
+  // FUNCTION 4: Adding random diagnoses to the randomly generated percentages.
 
-  $('#percentage').text(piechartOne.data + 'HELLO');
+    $('#chartValue1').text(
+      piechartOne.data + '% change of getting'
+    );
 
+    $('#chartValue2').text(
+      piechartTwo.data + '% change of getting'
+    );
 
-},2000);
+    $('#chartValue3').text(
+      pieChartThree.data + '% change of getting'
+    );
 
-};
+},2000); // Closing the piechart function which I modified.
+
+}; // Closing all of the functions attributed to the piechart.
