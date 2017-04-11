@@ -26,11 +26,16 @@ $(document).ready(function(){
               // than 500px and height smaller than 600px.
               else {
                 diagnosisConceal();
-              }
+              };
 
               if (widthDiagnosis > 500 && heightDiagnosis > 1000) {
                 // The user must continue to stretch the section until the drag and drop feature can be seen.
-                // dragDrop();
+                dragDrop();
+                $('#dragdrop').show();
+              }
+
+              else {
+                $('#dragdrop').hide();
               }
 
               console.log(ui.size);
@@ -365,8 +370,10 @@ function getDiagnosis (data) {
         opacity: .85
       });
 
+      // Adjust the margin of the drag and drop
       mainScreen.style = {
-        marginTop: "900px"
+        marginTop: "975px",
+        marginLeft: "300px"
       };
 
       mainScreen.centerX();
@@ -384,7 +391,7 @@ function getDiagnosis (data) {
         height: 88,
         backgroundColor: "#74a5d9",
         x: item1OriginX,
-        y: item1OriginY
+        y: item1OriginY,
       });
 
       item1.superLayer = mainScreen;
@@ -422,6 +429,7 @@ function getDiagnosis (data) {
       undoButton.sendToBack();
 
       item1.on(Events.DragStart, function() {
+
         item1.animate({
           properties: {
             scale: 1.2
@@ -463,6 +471,10 @@ function getDiagnosis (data) {
             },
             curve: "spring( 300, 20, 0 )"
           });
+
+          // When illness is brought to the delete drag and drop center, there will be a message saying it was deleted.
+          $('.delete').show();
+
           undoButton.bringToFront();
           undoButton.animate({
             properties: {
@@ -499,7 +511,12 @@ function getDiagnosis (data) {
               opacity: 1
             },
             curve: "spring( 300, 15, 0 )"
+
           });
+
+          // When illness is brought to the delete drag and drop center, there will be a message saying it was deleted.
+          $('.delete').hide();
+
           dropArea.scale = 0.95;
           dropArea.animate({
             properties: {

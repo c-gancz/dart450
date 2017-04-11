@@ -42,7 +42,7 @@
   margin-left: 50px;
 }
 
-#possible-diagnoses h3 {
+#possible-diagnoses h3{
   color:yellow;
 }
 
@@ -55,4 +55,33 @@
 #chartDiagnosis1, #chartDiagnosis2, #chartDiagnosis3 {
   color:white;
   margin-bottom: 10px;
+}
+
+.delete {
+  font-size: 100px;
+  display: none;
+  margin-top: -200px;
+  position: fixed;
+}
+
+#dragdrop {
+    display: none;
+}
+
+#dragdrop h4 {
+  font-family: 'Righteous', cursive;
+  color:yellow;
+  font-size: 28px;
+  margin-top: 200px;
+}
+
+#remove {
+  font-size:21px;
+  font-family: 'Open Sans', sans-serif;
+  color:white;
+  font-weight: normal;
+  width: 600px;
+  display:inline-block;
+  margin-left: 40px;
+  margin-top: 40px;
 }
