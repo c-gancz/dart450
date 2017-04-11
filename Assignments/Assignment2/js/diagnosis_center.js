@@ -346,6 +346,7 @@ function getDiagnosis (data) {
 };
 
 // FUNCTION 6: Drag and drop feature. Code inspired and modified from Borrys Hasian at http://codepen.io/borryshasian/pen/yyaaWQ
+// TO KEEP EDITING FROM HERE
   function dragDrop(){
     (function() {
       var dropArea, dropAreaColor, dropAreaHoverColor, isDropped, item1, item1OriginX, item1OriginY, mainScreen, mainScreenHeight, mainScreenWidth, undoButton;
@@ -357,7 +358,7 @@ function getDiagnosis (data) {
       isDropped = false;
 
       mainScreen = new Layer({
-        backgroundColor: "#ffffff",
+        backgroundColor: "rgba(255, 255, 255, 0)",
         width: mainScreenWidth,
         height: mainScreenHeight,
         y: 16,
@@ -365,7 +366,7 @@ function getDiagnosis (data) {
       });
 
       mainScreen.style = {
-        marginTop: "800px"
+        marginTop: "900px"
       };
 
       mainScreen.centerX();
@@ -382,7 +383,6 @@ function getDiagnosis (data) {
         width: 128,
         height: 88,
         backgroundColor: "#74a5d9",
-        borderRadius: "4px",
         x: item1OriginX,
         y: item1OriginY
       });
@@ -400,7 +400,6 @@ function getDiagnosis (data) {
         height: mainScreenHeight / 3,
         backgroundColor: dropAreaColor,
         maxY: mainScreenHeight - 16,
-        borderRadius: "4px"
       });
 
       dropArea.superLayer = mainScreen;
@@ -415,7 +414,7 @@ function getDiagnosis (data) {
         image: "https://s3-us-west-2.amazonaws.com/s.cdpn.io/211619/Undo_Button.png",
         midX: dropArea.midX,
         midY: dropArea.midY,
-        opacity: 0
+        opacity: 0,
       });
 
       undoButton.superLayer = mainScreen;
@@ -430,9 +429,6 @@ function getDiagnosis (data) {
           curve: "ease-in",
           time: .2
         });
-        return item1.style = {
-          boxShadow: "0px 2px 4px 0px rgba(0,0,0,0.6)"
-        };
       });
 
       item1.on(Events.DragMove, function() {
@@ -483,9 +479,6 @@ function getDiagnosis (data) {
             },
             curve: "spring( 300, 15, 0 )"
           });
-          item1.style = {
-            boxShadow: ""
-          };
         }
         dropArea.backgroundColor = dropAreaColor;
         return dropArea.animate({
