@@ -7,7 +7,8 @@
 <link rel="stylesheet" type="text/css" href="../css/diagnosis_center.css">
 </head>
 
-<body>
+<body onload="window.setTimeout('elizaReset()',100)">
+
 
   <div id="title">
     <h1>Virtual Doctor<h1>
@@ -121,16 +122,25 @@
       <p>Order medication and connect to people with similar health</p>
       <img src="../img/medication.svg">
   </div>
+  <form name="e_form" onsubmit="elizaStep();return false">
+  <textarea name="e_display"></textarea>
+    <input TYPE="text" NAME="e_input">
+      <button TYPE="submit" VALUE="&nbsp;Talk&nbsp;">Submit</button>
+      <button TYPE="reset" VALUE="Reset" onClick="window.setTimeout('elizaReset()',100)">Reset</button>
+  </form>
 
   <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
   <script src='https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.2/jquery-ui.min.js'></script>
   <script src='https://cdnjs.cloudflare.com/ajax/libs/gsap/latest/TweenMax.min.js'></script>
   <script src='https://cdnjs.cloudflare.com/ajax/libs/gsap/latest/utils/Draggable.min.js'></script>
   <script src='https://code.responsivevoice.org/responsivevoice.js'></script>
-    <script src='https://s3-us-west-2.amazonaws.com/s.cdpn.io/211619/framer.js'></script>
+  <script src='https://s3-us-west-2.amazonaws.com/s.cdpn.io/211619/framer.js'></script>
+  <script src="../js/elizabot.js" content="text/javascript"></script>
+  <script src="../js/elizadata.js" content="text/javascript"></script>
   <script src="../js/jquery.blast.min.js" content="text/javascript"></script>
   <script src="../js/dashboard.js" content="text/javascript"></script>
   <script src="../js/diagnosis_center.js" content="text/javascript"></script>
+  <script src="../js/psychiatrist_counsellor.js" content="text/javascript"></script>
   <script src="../js/heartrate_tracker.js" content="text/javascript"></script>
   <script src="../js/pharmacy_community.js" content="text/javascript"></script>
   <script src="../js/workout_log.js" content="text/javascript"></script>
