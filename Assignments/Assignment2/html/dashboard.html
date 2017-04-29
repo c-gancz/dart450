@@ -7,14 +7,14 @@
 <link rel="stylesheet" type="text/css" href="../css/diagnosis_center.css">
 </head>
 
-<body onload="window.setTimeout('elizaReset()',100)">
-
-
+<!--- //////////// TITLE SECTION //////////////////// -->
+<body>
   <div id="title">
     <h1>Virtual Doctor<h1>
     <h2>Diagnosis and Treatment Services</h2>
   </div>
 
+<!--- //////////// PROFILE SECTION //////////////////// -->
   <div id="navigation">
     <section id="profile">
       <h3>Profile</h3>
@@ -26,9 +26,9 @@
 
       <h4 class="profileheader">LAST DIAGNOSIS</h4>
       <h4 id="profilediagnosis"></h4>
-
     </section>
 
+  <!--- //////////// ASSISANT SECTION //////////////////// -->
     <section id="assistant">
       <h3>Assistant</h3>
 
@@ -46,15 +46,20 @@
     </section>
   </div>
 
+<!--- //////////// OVERALL DASHBOARD SECTION //////////////////// -->
   <div id="dashboard">
+
+    <!--- //////////// DIAGNOSIS CENTER //////////////////// -->
     <section id="diagnosiscenter" class='draggable resizable'>
       <h2>Diagnosis<br>Center</h2>
       <p>Diagnose, treat, and calculate your likelihood to get sick</p>
       <img src="../img/diagnosis.svg">
 
+      <!-- This applies to the piechart with the percentage numbers. -->
       <div id="diagnosis-reveal">
         <canvas id="chart" width="300" height="300"></canvas>
 
+        <!-- These texts change depending on the random diagnosis/percentage number. -->
         <div id="possible-diagnoses">
           <h3>Probability of Illness / Sickness</h3>
           <h4 id="chartValue1">INSERT TEXT HERE</h4>
@@ -65,13 +70,13 @@
           <h4 id="chartDiagnosis3">INSERT TEXT HERE</h4>
         </div>
 
+        <!-- This applies to the drag and drop your disease function. -->
         <div id="dragdrop">
           <h4>REMOVE ILLNESS / DISEASE</h4>
           <h4 class="delete">ILLNESS REMOVED</h4>
           <h5>Drag and drop your illness / disease into the delete box. Remember, your risks of catching or developing the other two diseases / illnesses will increase.</h5>
 
           <div id="board">
-
             <div>
               <h5>DISEASES</h5>
               <h5>DELETE</h5>
@@ -87,48 +92,55 @@
             <ul id="remove-disease">
             </ul>
           </div>
-
         </div>
-
       </div>
-    </section>
+    </section><!-- END OF DIAGNOSIS CENTER SECTION -->
 
+    <!--- //////////// XRAY SERVICES SECTION //////////////////// -->
     <section id="xray" class='draggable resizable margin'>
       <h2>X-Ray<br>Services</h2>
       <p>Scan a body part to check for a potential disease and illness</p>
       <img src="../img/xray.svg">
     </section>
 
+    <!--- //////////// PSYCHOLOGIST/COUNSELLOR SECTION //////////////////// -->
     <section id="psychologist" class='draggable resizable'>
       <h2>Psychiatrist / Counsellor</h2>
       <p>This service will listen to you and guide you in the right direction</p>
       <img src="../img/psychiatrist.svg">
+
+      <!--- This section of the psychologist/counsellor applies to eliza.js. This library was confusing to work with
+      as it wasn't written in jQuery and the javascript was happening directly in the HTML document.-->
+      <form name="e_form" onsubmit="elizaStep();return false">
+      <textarea name="e_display"></textarea>
+      	<input TYPE="text" NAME="e_input">
+      		<button TYPE="submit" VALUE="&nbsp;Talk&nbsp;" id="submit">Submit</button>
+      		<button TYPE="reset" VALUE="Reset" onClick="window.setTimeout('elizaReset()',100)" id="reset">Reset</button>
+      </form>
     </section>
 
+    <!--- //////////// HEART RATE TRACKER SECTION //////////////////// -->
     <section id="heartrate" class='draggable resizable'>
       <h2>Heart Rate Tracker</h2>
       <p>Track your heart rate to see your current heart health levels</p>
       <img src="../img/heartrate.svg">
     </section>
 
+    <!--- //////////// WORKOUT LOG SECTION //////////////////// -->
     <section id="workout" class='draggable resizable margin'>
       <h2>Workout<br>Log</h2>
       <p>See your recent workouts and track your physical activity</p>
       <img src="../img/exercise.svg">
     </section>
 
+    <!--- //////////// PHARMACY/COMMUNITY SECTION //////////////////// -->
     <section id="pharmacy" class='draggable resizable'>
       <h2>Pharmacy / Community</h2>
       <p>Order medication and connect to people with similar health</p>
       <img src="../img/medication.svg">
   </div>
-  <form name="e_form" onsubmit="elizaStep();return false">
-  <textarea name="e_display"></textarea>
-    <input TYPE="text" NAME="e_input">
-      <button TYPE="submit" VALUE="&nbsp;Talk&nbsp;">Submit</button>
-      <button TYPE="reset" VALUE="Reset" onClick="window.setTimeout('elizaReset()',100)">Reset</button>
-  </form>
 
+  <!--- //////////// VARIOUS LIBRARIES AND MY OWN SCRIPTS IN JAVASCRIPT //////////////////// -->
   <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
   <script src='https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.2/jquery-ui.min.js'></script>
   <script src='https://cdnjs.cloudflare.com/ajax/libs/gsap/latest/TweenMax.min.js'></script>
@@ -145,6 +157,59 @@
   <script src="../js/pharmacy_community.js" content="text/javascript"></script>
   <script src="../js/workout_log.js" content="text/javascript"></script>
   <script src="../js/xray_services.js" content="text/javascript"></script>
+
+  <!--- Here is the script that allows elizabot.js to function. I tried repeatedly to write the script
+in a new js file, however it would not work as the HTML of the form, textarea, etc. has javascript written
+directly inside which refers to specific variables indicated here. It also wasn't written in jQuery so the
+setup was little confusing to me. Perhaps you can help me figure out the issue, but for now it's directly in the HTML. -->
+  <script>
+  var eliza = new ElizaBot();
+  var elizaLines = new Array();
+
+  var displayCols = 60;
+  var displayRows = 20;
+
+  function elizaReset() {
+  	eliza.reset();
+  	elizaLines.length = 0;
+  	elizaStep();
+  }
+
+  function elizaStep() {
+  	var f = document.forms.e_form;
+  	var userinput = f.e_input.value;
+  	if (eliza.quit) {
+  		f.e_input.value = '';
+  		if (confirm("This session is over.\nStart over?")) elizaReset();
+  		f.e_input.focus();
+  		return;
+  	}
+  	else if (userinput != '') {
+  		var usr = 'YOU:   ' + userinput;
+  		var rpl ='ELIZA: ' + eliza.transform(userinput);
+  		elizaLines.push(usr);
+  		elizaLines.push(rpl);
+      
+  		var temp  = new Array();
+  		var l = 0;
+  		for (var i=elizaLines.length-1; i>=0; i--) {
+  			l += 1 + Math.floor(elizaLines[i].length/displayCols);
+  			if (l >= displayRows) break
+  			else temp.push(elizaLines[i]);
+  		}
+  		elizaLines = temp.reverse();
+  		f.e_display.value = elizaLines.join('\n');
+  	}
+  	else if (elizaLines.length == 0) {
+  		// no input and no saved lines -> output initial
+  		var initial = 'ELIZA: ' + eliza.getInitial();
+  		elizaLines.push(initial);
+  		f.e_display.value = initial + '\n';
+  	}
+  	f.e_input.value = '';
+  	f.e_input.focus();
+  }
+  </script><!-- END OF ELIZABOT.JS SCRIPT -->
 
 </body>
 </html>
