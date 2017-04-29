@@ -197,30 +197,6 @@ input {
 }
 
 /*********************  HEART RATE SECTION   ******************/
-#ground {
-  position: absolute;
-  background: #ad8766;
-  top: 18em;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  z-index: 0;
-}
-
-#shadow {
-  position: absolute;
-  top: 19em;
-  left: 50%;
-  margin-left: -1em;
-  width: 2em;
-  height: 1em;
-  background: #111;
-  border-radius: 50%;
-  -webkit-animation:   pulse .5s infinite alternate;
-  -moz-animation:     pulse .5s infinite alternate;
-  -o-animation:       pulse .5s infinite alternate;
-  animation:          pulse .5s infinite alternate;
-}
 
 @-webkit-keyframes pulse {
   0% { width: 2em; margin-left: -1em; }
@@ -257,6 +233,7 @@ input {
   border-radius: 50%;
   margin: 0 auto;
   z-index: 2;
+  cursor: pointer;
   -webkit-animation: bounce .5s cubic-bezier(.63,.09,.75,.46) infinite alternate;
   -moz-animation:    bounce .5s cubic-bezier(.63,.09,.75,.46)  infinite alternate;
   -o-animation:      bounce .5s cubic-bezier(.63,.09,.75,.46)  infinite alternate;
