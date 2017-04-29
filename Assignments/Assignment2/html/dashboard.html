@@ -111,12 +111,14 @@
 
       <!--- This section of the psychologist/counsellor applies to eliza.js. This library was confusing to work with
       as it wasn't written in jQuery and the javascript was happening directly in the HTML document.-->
-      <form name="e_form" onsubmit="elizaStep();return false">
-      <textarea name="e_display"></textarea>
-      	<input TYPE="text" NAME="e_input">
-      		<button TYPE="submit" VALUE="&nbsp;Talk&nbsp;" id="submit">Submit</button>
-      		<button TYPE="reset" VALUE="Reset" onClick="window.setTimeout('elizaReset()',100)" id="reset">Reset</button>
-      </form>
+      <div id="elizarobot">
+        <form name="e_form" onsubmit="elizaStep();return false">
+        <textarea name="e_display"></textarea>
+        	<input TYPE="text" NAME="e_input">
+        		<button TYPE="submit" VALUE="&nbsp;Talk&nbsp;" id="submit">Submit</button>
+        		<button TYPE="reset" VALUE="Reset" onClick="window.setTimeout('elizaReset()',100)" id="reset">Reset</button>
+        </form>
+    </div>
     </section>
 
     <!--- //////////// HEART RATE TRACKER SECTION //////////////////// -->
@@ -189,7 +191,7 @@ setup was little confusing to me. Perhaps you can help me figure out the issue, 
   		var rpl ='ELIZA: ' + eliza.transform(userinput);
   		elizaLines.push(usr);
   		elizaLines.push(rpl);
-      
+
   		var temp  = new Array();
   		var l = 0;
   		for (var i=elizaLines.length-1; i>=0; i--) {

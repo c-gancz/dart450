@@ -1,51 +1,39 @@
 $(document).ready(function(){
 
-  var eliza = new ElizaBot();
-  var elizaLines = new Array();
+  // When the page loads, hide the Eliza Robot.
+  $('#elizarobot').hide();
 
-  var displayCols = 60;
-  var displayRows = 20;
+  // Only when the enlarge button is on will this function happen.
+  $('#enlarge-on').click(function(){
 
-  function elizaReset() {
-  	eliza.reset();
-  	elizaLines.length = 0;
-  	elizaStep();
-  }
+    // The function that allows elements to appear/disappear in the psychologist/counsellor
+    // while resizing it.
+    $('#psychologist').resizable({
 
-  function elizaStep() {
-  	var f = document.forms.e_form;
-  	var userinput = f.e_input.value;
-  	if (eliza.quit) {
-  		f.e_input.value = '';
-  		if (confirm("This session is over.\nStart over?")) elizaReset();
-  		f.e_input.focus();
-  		return;
-  	}
-  	else if (userinput != '') {
-  		var usr = 'YOU:   ' + userinput;
-  		var rpl ='ELIZA: ' + eliza.transform(userinput);
-  		elizaLines.push(usr);
-  		elizaLines.push(rpl);
-  		// display nicely
-  		// (fit to textarea with last line free - reserved for extra line caused by word wrap)
-  		var temp  = new Array();
-  		var l = 0;
-  		for (var i=elizaLines.length-1; i>=0; i--) {
-  			l += 1 + Math.floor(elizaLines[i].length/displayCols);
-  			if (l >= displayRows) break
-  			else temp.push(elizaLines[i]);
-  		}
-  		elizaLines = temp.reverse();
-  		f.e_display.value = elizaLines.join('\n');
-  	}
-  	else if (elizaLines.length == 0) {
-  		// no input and no saved lines -> output initial
-  		var initial = 'ELIZA: ' + eliza.getInitial();
-  		elizaLines.push(initial);
-  		f.e_display.value = initial + '\n';
-  	}
-  	f.e_input.value = '';
-  	f.e_input.focus();
-  }
+        // Function from jQuery UI allowing me to get the changing width and height values
+        // of the object that is being resized.
+        resize: function(event, ui) {
+              var widthPsychologist = ui.size.width;
+              var heightPsychologist = ui.size.height;
 
-});
+              // If statement allowing the Eliza Robot to only appear when the width of the psychologist section
+              // is larger than 500px and height longer than 600px.
+              if (widthPsychologist > 500 && heightPsychologist > 600) {
+                $('#elizarobot').show();
+              }
+
+              // Else statement hiding the Eliza Robot when width of the psychologist section is smaller
+              // than 500px and height smaller than 600px.
+              else {
+                $('#elizarobot').hide();
+              };
+
+
+          } // Closing the jQuery UI resize function.
+    }); // Closing the entire psychologist reveal/conceal function.
+
+}); // Closing the function of the enlarge-on button.
+
+
+
+}); //End of document.ready function
