@@ -20,6 +20,11 @@ $(document).ready(function(){
               // is larger than 500px and height longer than 600px.
               if (widthPsychologist > 500 && heightPsychologist > 600) {
                 elizaReveal();
+
+                // Make the height of the conversation approximately the height of the section
+                $('textarea').css({
+                  'height': heightPsychologist-375+"px"
+                });
               }
 
               // Else statement hiding the Eliza Robot when width of the psychologist section is smaller
@@ -74,7 +79,7 @@ function elizaConceal(){
   // Return the paragraph text to its original text
   $('#psychologist p').text('This service will listen to you and guide you in the right direction.');
 
-  // Return the paragraph colour to dark blue 
+  // Return the paragraph colour to dark blue
   $('#psychologist p').css({
     'color':'#10143e'
   });

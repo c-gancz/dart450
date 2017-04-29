@@ -28,7 +28,7 @@
       <h4 id="profilediagnosis"></h4>
     </section>
 
-  <!--- //////////// ASSISANT SECTION //////////////////// -->
+  <!--- //////////// ASSISTANT SECTION //////////////////// -->
     <section id="assistant">
       <h3>Assistant</h3>
 
@@ -114,9 +114,10 @@
       <div id="elizarobot">
         <form name="e_form" onsubmit="elizaStep();return false">
         <textarea name="e_display"></textarea>
+
+          <!-- User input box -->
         	<input TYPE="text" NAME="e_input">
-        		<button TYPE="submit" VALUE="&nbsp;Talk&nbsp;" id="submit">Submit</button>
-        		<button TYPE="reset" VALUE="Reset" onClick="window.setTimeout('elizaReset()',100)" id="reset">Reset</button>
+        		<button TYPE="reset" VALUE="Reset" onClick="window.setTimeout('elizaReset()',100)" id="reset">RESET</button>
         </form>
     </div>
     </section>
@@ -126,6 +127,9 @@
       <h2>Heart Rate Tracker</h2>
       <p>Track your heart rate to see your current heart health levels</p>
       <img src="../img/heartrate.svg">
+      <div id="ball"></div>
+      <div id="ground"></div>
+      <div id="shadow"></div>
     </section>
 
     <!--- //////////// WORKOUT LOG SECTION //////////////////// -->
@@ -187,8 +191,12 @@ setup was little confusing to me. Perhaps you can help me figure out the issue, 
   		return;
   	}
   	else if (userinput != '') {
-  		var usr = 'YOU:   ' + userinput;
-  		var rpl ='ELIZA: ' + eliza.transform(userinput);
+      // Variable indicating the user input the person is writing displayed in the text area.
+      var usr = userinput;
+
+      // Variable indicating the input the psychologist writes displayed in the text area.
+  		var rpl = eliza.transform(userinput);
+
   		elizaLines.push(usr);
   		elizaLines.push(rpl);
 
@@ -196,6 +204,10 @@ setup was little confusing to me. Perhaps you can help me figure out the issue, 
   		var l = 0;
   		for (var i=elizaLines.length-1; i>=0; i--) {
   			l += 1 + Math.floor(elizaLines[i].length/displayCols);
+
+        console.log(colorEliza);
+        var colorEliza = elizaLines[i];
+
   			if (l >= displayRows) break
   			else temp.push(elizaLines[i]);
   		}
@@ -204,7 +216,7 @@ setup was little confusing to me. Perhaps you can help me figure out the issue, 
   	}
   	else if (elizaLines.length == 0) {
   		// no input and no saved lines -> output initial
-  		var initial = 'ELIZA: ' + eliza.getInitial();
+  		var initial = eliza.getInitial();
   		elizaLines.push(initial);
   		f.e_display.value = initial + '\n';
   	}
