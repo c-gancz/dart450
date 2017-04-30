@@ -49,7 +49,8 @@ function clickCounter(){
        console.log(i++);
 
        if (i==10) {
-          $('#heartrate').hide();
+          // Once 10 clicks have been made, the heart rate results appear.
+          heartResults();
         }
 
    });
@@ -82,7 +83,7 @@ function heartrateReveal(){
   });
 };
 
-// FUNCTION 2: The state the heart rate tracker returns to when the heart rate tracker is minimized.
+// FUNCTION 3: The state the heart rate tracker returns to when the heart rate tracker is minimized.
 function heartrateConceal(){
   $('#ball').hide();
 
@@ -106,4 +107,11 @@ function heartrateConceal(){
   $('#heartrate p').css({
     'color':'#10143e'
   });
+};
+
+// FUNCTION 4: Heart rate results
+function heartResults(){
+
+  $('#ball').hide();
+
 };

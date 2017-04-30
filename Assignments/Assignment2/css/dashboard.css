@@ -226,51 +226,51 @@ input {
 
 #ball {
   position: relative;
-  background: #f7f7f7;
-  top: 3em;
-  width: 3em;
-  height: 3em;
+  background:rgba(255, 255, 255,0.5);
+  top:500em;
+  width:400px;
+  height:400px;
   border-radius: 50%;
   margin: 0 auto;
   z-index: 2;
   cursor: pointer;
-  -webkit-animation: bounce .5s cubic-bezier(.63,.09,.75,.46) infinite alternate;
-  -moz-animation:    bounce .5s cubic-bezier(.63,.09,.75,.46)  infinite alternate;
-  -o-animation:      bounce .5s cubic-bezier(.63,.09,.75,.46)  infinite alternate;
-  animation:         bounce .5s cubic-bezier(.63,.09,.75,.46)  infinite alternate;
+  -webkit-animation: bounce .2s cubic-bezier(.63,.09,.75,.46) infinite alternate;
+  -moz-animation:    bounce .2s cubic-bezier(.63,.09,.75,.46)  infinite alternate;
+  -o-animation:      bounce .2s cubic-bezier(.63,.09,.75,.46)  infinite alternate;
+  animation:         bounce .2s cubic-bezier(.63,.09,.75,.46)  infinite alternate;
 }
 
 @-webkit-keyframes bounce {
   0%, 10% { top: 3em; height: 3em; width: 3em; }
-  15% { height: 3.15em; width: 2.9em; }
-  35% { height: 4em; width: 2.5em; }
-  75% { height: 4em; width: 2.5em; }
-  95% { height: 2em; width: 3.5em; }
-  100% { top: 18em; height: 1em; width: 3em; }
+  15% { height:400px; width:400px; }
+  35% { height:300px; width:300px; }
+  75% { height:200px; width:200px; }
+  95% { height:100px; width:100px; }
+  100% { top: 18em; height:50px; width:50px; }
 }
 @-moz-keyframes bounce {
   0%, 10% { top: 3em; height: 3em; width: 3em; }
-  15% { height: 3.15em; width: 2.9em; }
-  35% { height: 4em; width: 2.5em; }
-  75% { height: 4em; width: 2.5em; }
-  95% { height: 2em; width: 3.5em; }
-  100% { top: 18em; height: 1em; width: 3em; }
+  15% { height:400px; width:400px; }
+  35% { height:300px; width:300px; }
+  75% { height:200px; width:200px; }
+  95% { height:100px; width:100px; }
+  100% { top: 18em; height:50px; width:50px; }
 }
 @-o-keyframes bounce {
   0%, 10% { top: 3em; height: 3em; width: 3em; }
-  15% { height: 3.15em; width: 2.9em; }
-  35% { height: 4em; width: 2.5em; }
-  75% { height: 4em; width: 2.5em; }
-  95% { height: 2em; width: 3.5em; }
-  100% { top: 18em; height: 1em; width: 3em; }
+  15% { height:400px; width:400px; }
+  35% { height:300px; width:300px; }
+  75% { height:200px; width:200px; }
+  95% { height:100px; width:100px; }
+  100% { top: 18em; height:50px; width:50px; }
 }
 @keyframes bounce {
   0%, 10% { top: 3em; height: 3em; width: 3em; }
-  15% { height: 3.15em; width: 2.9em; }
-  35% { height: 4em; width: 2.5em; }
-  75% { height: 4em; width: 2.5em; }
-  95% { height: 2em; width: 3.5em; }
-  100% { top: 18em; height: 1em; width: 3em; }
+  15% { height:400px; width:400px; }
+  35% { height:300px; width:300px; }
+  75% { height:200px; width:200px; }
+  95% { height:100px; width:100px; }
+  100% { top: 18em; height:50px; width:50px; }
 }
 
 #heartrate img {
