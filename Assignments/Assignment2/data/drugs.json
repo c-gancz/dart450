@@ -120,7 +120,10 @@
     "Buspar",
     "Buspirone",
     "Busulfan",
-    "Busulfex",
+    "Busulfex"
+],
+
+"drugsc": [
     "Cabergoline",
     "Caduet",
     "Calcitonin-Salmon",
@@ -225,7 +228,10 @@
     "Cyproheptadine",
     "Cystadane",
     "Cytogam",
-    "Cytomel",
+    "Cytomel"
+  ],
+
+  "drugsd": [
     "Dacarbazine",
     "Daraprim",
     "Darvocet-N",
@@ -289,7 +295,10 @@
     "Dynacirc",
     "Dynacirc CR",
     "Dynapen",
-    "Dyphylline",
+    "Dyphylline"
+  ],
+
+  "drugse": [
     "Econazole Nitrate",
     "Edrophonium",
     "Efavirenz",
@@ -347,7 +356,10 @@
     "Evoxac",
     "Exelderm",
     "Exjade",
-    "Extavia",
+    "Extavia"
+  ],
+
+  "drugsf": [
     "Factor IX Complex",
     "Factrel",
     "Famciclovir",
@@ -396,7 +408,10 @@
     "Furadantin",
     "Furosemide",
     "Furoxone",
-    "Fuzeon",
+    "Fuzeon"
+  ],
+
+  "drugsg": [
     "Gabitril",
     "Gadobenate Dimeglumine",
     "Gadofosveset Trisodium",
@@ -418,7 +433,10 @@
     "Grifulvin V",
     "Griseofulvin",
     "Guanethidine Monosulfate",
-    "Gynazole",
+    "Gynazole"
+  ],
+
+  "drugsh": [
     "Haemophilus b Conjugate Vaccine",
     "Halcinonide",
     "Haldol",
@@ -443,7 +461,10 @@
     "Hydroxyethyl Starch",
     "Hylenex",
     "Hyoscyamine",
-    "Hytrin",
+    "Hytrin"
+  ],
+
+  "drugsi": [
     "Ibuprofen Lysine",
     "Idamycin",
     "Idamycin PFS",
@@ -476,10 +497,16 @@
     "Isopto Hyoscine",
     "Istalol",
     "Isuprel",
-    "Ixempra",
+    "Ixempra"
+  ],
+
+  "drugsj": [
     "Jalyn",
     "Janumet",
-    "Je-Vax",
+    "Je-Vax"
+  ],
+
+  "drugsk": [
     "K-LOR",
     "Kaletra",
     "Kariva",
@@ -487,7 +514,10 @@
     "Kinlytic",
     "Klonopin",
     "Kuvan",
-    "Kytril",
+    "Kytril"
+  ],
+
+  "drugsl": [
     "Labetalol",
     "lacosamide",
     "Lamisil",
@@ -533,7 +563,10 @@
     "Loxitane",
     "Lucentis",
     "Luvox CR",
-    "Lybrel",
+    "Lybrel"
+  ],
+
+  "drugsm": [
     "M-M-R",
     "Malarone",
     "Malathion",
@@ -612,7 +645,10 @@
     "Myfortic",
     "Mykrox",
     "Myobloc",
-    "Myochrysine",
+    "Myochrysine"
+  ],
+
+  "drugsn": [
     "Nafcillin Sodium",
     "Naftifine Hcl",
     "Nalmefene Hydrochloride",
@@ -655,7 +691,10 @@
     "Numorphan",
     "Nutropin AQ",
     "Nutropin Depot",
-    "Nydrazid",
+    "Nydrazid"
+  ],
+
+  "drugso": [
     "Omeprazole",
     "Omnaris",
     "Opana",
@@ -679,7 +718,10 @@
     "Oxycontin",
     "Oxymetholone",
     "Oxymorphone",
-    "Oxytetracycline",
+    "Oxytetracycline"
+  ],
+
+  "drugsp": [
     "Paclitaxel",
     "Palifermin",
     "Paliperidone",
@@ -769,11 +811,17 @@
     "Pylera",
     "Pyrazinamide",
     "Pyridium",
-    "Pyridostigmine",
+    "Pyridostigmine"
+  ],
+
+  "drugsq": [
     "Qualaquin",
     "Quazepam",
     "Quinidine Sulfate",
-    "Quixin",
+    "Quixin"
+  ],
+
+  "drugsr": [
     "Rabies Vaccine",
     "Raltegravir",
     "Ranexa",
@@ -808,7 +856,10 @@
     "RotaTeq",
     "Roxicet",
     "Roxicodone",
-    "Ryzolt",
+    "Ryzolt"
+  ],
+
+  "drugss": [
     "Sabril",
     "Sacrosidase",
     "Samsca",
@@ -859,7 +910,10 @@
     "Sutent",
     "Synthroid",
     "Synvisc",
-    "Syprine",
+    "Syprine"
+  ],
+
+  "drugst": [
     "Tacrolimus",
     "Talacen",
     "Talwin Nx",
@@ -932,7 +986,10 @@
     "Trypan Blue",
     "Tussionex",
     "Tysabri",
-    "Tyvaso",
+    "Tyvaso"
+  ],
+
+  "drugsu": [
     "Uloric",
     "Ultiva",
     "Ultram",
@@ -940,7 +997,10 @@
     "Ultravate",
     "Unasyn",
     "Urex",
-    "Ursodiol",
+    "Ursodiol"
+  ],
+
+  "drugsv": [
     "Vagistat-1",
     "Valacyclovir Hydrochloride",
     "Valganciclovir Hcl",
@@ -978,11 +1038,23 @@
     "Vivactil",
     "Vivelle-Dot",
     "Vusion",
-    "Vytorin",
-    "Winstrol",
+    "Vytorin"
+  ],
+
+  "drugsw": [
+    "Winstrol"
+  ],
+
+  "drugsx": [
     "Xigris",
-    "Xolair",
-    "Yellow Fever Vaccine",
+    "Xolair"
+  ],
+
+  "drugsy": [
+    "Yellow Fever Vaccine"
+  ],
+
+  "drugsz": [
     "Zaditor",
     "Zalcitabine",
     "Zanosar",
