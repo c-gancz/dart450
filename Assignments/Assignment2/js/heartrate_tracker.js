@@ -1,10 +1,7 @@
 $(document).ready(function(){
 
-  // When the page loads, hide the heart tracker ball.
-  $('#ball').hide();
-
-  // When the page loads, hide the text "beats per minute"
-  $('#heartrate h4').hide();
+  // When the page loads, conceal all animations/js that happen when the section is enlarged.
+  heartrateConceal();
 
   // Only when the enlarge button is on will this function happen.
   $('#enlarge-on').click(function(){
@@ -19,16 +16,16 @@ $(document).ready(function(){
               var widthHeartrate = ui.size.width;
               var heightHeartrate = ui.size.height;
 
-              // If statement allowing the heart rate ball to only appear when the width of the heart rate tracker section
+              // If statement allowing the heart rate ball and results to only appear when the width of the heart rate tracker section
               // is larger than 500px and height longer than 600px.
               if (widthHeartrate > 500 && heightHeartrate > 600) {
                 heartrateReveal();
 
-                // Enable the clicking counter function to track the clicks on the heart rate tracker everytime the section is enlarged.
+                // Enable the clicking counter function to track the clicks on the heart rate tracker.
                 clickCounter();
               }
 
-              // Else statement hiding the ball when width of the heart rate tracker section is smaller
+              // Else statement hiding the ball and results when the width of the heart rate tracker section is smaller
               // than 500px and height smaller than 600px.
               else {
                 heartrateConceal();
@@ -39,9 +36,9 @@ $(document).ready(function(){
 
 }); // Closing the function of the enlarge-on button.
 
-});
+}); // Closing the $(document).ready() function;
 
-//////////////////////// FUNCTIONS ////////////////////////////////
+/////////////////////////// FUNCTIONS ////////////////////////////////
 
 // FUNCTION 1: To track the number of clicks on the heart rate tracker.
 function clickCounter(){
@@ -52,7 +49,7 @@ function clickCounter(){
        console.log(i++);
 
        if (i==10) {
-          // Once 10 clicks have been made, the heart rate results appear.
+          // Once when 10 clicks have been made will the heart rate results appear.
           heartResults();
         }
 
@@ -61,6 +58,7 @@ function clickCounter(){
 
 // FUNCTION 2: What is revealed when the heart rate tracker is enlarged.
 function heartrateReveal(){
+  // Show the bouncy ball
   $('#ball').show();
 
   // Change the background color to orange
@@ -68,7 +66,7 @@ function heartrateReveal(){
     'background-color':'rgb(255, 99, 0)'
   });
 
-  // Make the image get larger
+  // Make the image get larger by adding a class from my CSS
   $('#heartrate img').addClass("svg");
 
   // Fix the position of the image when its enlarged
@@ -77,10 +75,10 @@ function heartrateReveal(){
     'margin-top':'-75px'
   });
 
-  // Change the text with instructions on clicking the ball to get your first reading
+  // Change the text with instructions on how to get the reading
   $('#heartrate p').text('Click the ball until the doctor gives you your reading.');
 
-  // Make the paragraph text turn white
+  // Make the paragraph text white
   $('#heartrate p').css({
     'color':'white'
   });
@@ -88,6 +86,7 @@ function heartrateReveal(){
 
 // FUNCTION 3: The state the heart rate tracker returns to when the heart rate tracker is minimized.
 function heartrateConceal(){
+  // Hide the bouncy ball
   $('#ball').hide();
 
   // Change the background color back to blue
@@ -95,7 +94,7 @@ function heartrateConceal(){
     'background-color':'#1ca4d6'
   });
 
-  // Make the image get smaller
+  // Make the image get smaller by removing the CSS class
   $('#heartrate img').removeClass("svg");
 
   // Return the image to its original position
@@ -103,7 +102,7 @@ function heartrateConceal(){
     'position':'fixed'
   });
 
-  // When minimized return the regular text
+  // When minimized, return the initial paragraph text
   $('#heartrate p').text('Track your heart rate to see your current heart health levels');
 
   // Make the paragraph return back to blue
@@ -124,21 +123,18 @@ function heartResults(){
   // Hide the ball when showing the results
   $('#ball').hide();
 
-  // The paragraph text changes to the heart rate resukts
+  // The paragraph text changes to the heart rate results
   $('#heartrate p').text('Based on your rising heart rate when clicking the ball, your average heart rate on a daily basis is');
 
   // The empty h2 in my HTML becomes the random number generated for the heart rate
   $('.rate').text(randomRate);
 
-  // Make the "beats for minute" text appear
-  $('#rateresults h4').show();
-
-  // Make the heart rate number appear when the results come
+  // Make the HTML body append the results to the heart tracker section
   $('#rateresults').show();
 
   // Add a margin to the top of the heart rate results
   $('#rateresults').css({
-    'margin-top':'10%'
+    'margin-top':'8%'
   });
 
   // Make the resulting heart rate number large
@@ -146,6 +142,36 @@ function heartResults(){
     'font-size':'300px'
   });
 
-  // Make the image get smaller after the results as well
-  $('#heartrate img').removeClass("svg");
-};
+  // Once the results are in, completely remove the ball from the HTML to make sure it doesn't reappear.
+  $('#ball').remove();
+
+    // Considering I only want the user to have the function where they need to click the ball 10 times happen once and not every time the user resizes the window, I need to tell my jQuery UI that once the function has happened, only show the results when resizing the heart rate tracker section after the function was executed.
+    $('#heartrate').resizable({
+        resize: function(event, ui) {
+              var widthHeartrate = ui.size.width;
+              var heightHeartrate = ui.size.height;
+
+              if (widthHeartrate > 500 && heightHeartrate > 600) {
+
+                // Keep the heart rate results
+                $('#rateresults').show();
+
+                // Maintain all CSS-changed elements from the heartrateReveal function
+                heartrateReveal();
+
+                // Make sure the text that appears when the section is enlarged is the one of the results and not the one of the instructions on how to produce the heart rate reading
+                $('#heartrate p').text('Based on your rising heart rate when clicking the ball, your average heart rate on a daily basis is');
+              }
+
+              // Else statement enabling the section to return to its initial state when minimized
+              else {
+                // Hide the results
+                $('#rateresults').hide();
+
+                // Maintain all CSS properties of the section's initial state when its not enlarged
+                  heartrateConceal();
+                };
+
+          } // Closing the jQuery UI resize function.
+    }); // Closing the entire heartrate tracker reveal/conceal function.
+}; // Closing the heartResults() function.
