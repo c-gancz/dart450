@@ -52,19 +52,20 @@ h2 {
   width:15%;
   background-color: white;
   display: inline-block;
-  height:637px;
+  min-height:637px;
   float: left;
   margin-left: 2.5%;
   padding: 20px;
 }
 
 #dashboard section {
-  width:30%;
-  height:300px;
+  max-width:30%;
+  min-height: 300px;
   background-color:#1ca4d6;
   display: inline-block;
   margin-bottom: 2.5%;
   position: relative;
+  float: left;
 }
 
 .draggable {
@@ -279,4 +280,8 @@ input {
   float: right;
   margin-right:25px;
   margin-top: 20px;
+}
+
+#dashboard img {
+  width:22.5%;
 }

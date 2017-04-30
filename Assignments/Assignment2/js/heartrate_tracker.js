@@ -3,6 +3,9 @@ $(document).ready(function(){
   // When the page loads, hide the heart tracker ball.
   $('#ball').hide();
 
+  // When the page loads, hide the text "beats per minute"
+  $('#heartrate h4').hide();
+
   // Only when the enlarge button is on will this function happen.
   $('#enlarge-on').click(function(){
 
@@ -108,8 +111,8 @@ function heartrateConceal(){
     'color':'#10143e'
   });
 
-  // Make the heart rate number disappear when the section is minimized
-  $('.rate').hide();
+  // Make the heart rate number disappear when the section is minimized as well as the "beats per minute"
+  $('.rate, #heartrate h4').hide();
 };
 
 // FUNCTION 4: Heart rate results once the ball has been clicked 10 times
@@ -127,6 +130,11 @@ function heartResults(){
   // The empty h2 in my HTML becomes the random number generated for the heart rate
   $('.rate').text(randomRate);
 
-  // Make the heart rate number appear when the results come in
-  $('.rate').show();
+  // Make the heart rate number appear when the results come in as well as the "beats per minute"
+  $('.rate, #heartrate h4').show();
+
+  // Make the resulting heart rate number large
+  $('.rate').css({
+    'font-size':'300px'
+  });
 };
