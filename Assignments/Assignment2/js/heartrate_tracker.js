@@ -109,9 +109,18 @@ function heartrateConceal(){
   });
 };
 
-// FUNCTION 4: Heart rate results
+// FUNCTION 4: Heart rate results once the ball has been cliked 10 times
 function heartResults(){
 
+  // The random rate generated is between 100-170, making it very unrealistically elevated
+  var randomRate = Math.floor((Math.random() * 71) + 100);
+
+  // Hide the ball when showing the results
   $('#ball').hide();
 
+  // The paragraph text changes to the heart rate resukts
+  $('#heartrate p').text('Based on your rising heart rate when clicking the ball, your average heart rate on a daily basis is');
+
+  // The empty h2 in my HTML becomes the random number generated for the heart rate
+  $('.rate').text(randomRate);
 };
