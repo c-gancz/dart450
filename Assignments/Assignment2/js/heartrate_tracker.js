@@ -1,8 +1,5 @@
 $(document).ready(function(){
 
-  // Enable the clicking counter function to track the clicks on the heart rate tracker.
-  clickCounter();
-
   // When the page loads, hide the heart tracker ball.
   $('#ball').hide();
 
@@ -23,6 +20,9 @@ $(document).ready(function(){
               // is larger than 500px and height longer than 600px.
               if (widthHeartrate > 500 && heightHeartrate > 600) {
                 heartrateReveal();
+
+                // Enable the clicking counter function to track the clicks on the heart rate tracker everytime the section is enlarged.
+                clickCounter();
               }
 
               // Else statement hiding the ball when width of the heart rate tracker section is smaller
@@ -107,9 +107,12 @@ function heartrateConceal(){
   $('#heartrate p').css({
     'color':'#10143e'
   });
+
+  // Make the heart rate number disappear when the section is minimized
+  $('.rate').hide();
 };
 
-// FUNCTION 4: Heart rate results once the ball has been cliked 10 times
+// FUNCTION 4: Heart rate results once the ball has been clicked 10 times
 function heartResults(){
 
   // The random rate generated is between 100-170, making it very unrealistically elevated
@@ -123,4 +126,7 @@ function heartResults(){
 
   // The empty h2 in my HTML becomes the random number generated for the heart rate
   $('.rate').text(randomRate);
+
+  // Make the heart rate number appear when the results come in
+  $('.rate').show();
 };
