@@ -78,7 +78,7 @@ function heartrateReveal(){
   });
 
   // Change the text with instructions on clicking the ball to get your first reading
-  $('#heartrate p').text('Click the ball until you get your first reading.');
+  $('#heartrate p').text('Click the ball until the doctor gives you your reading.');
 
   // Make the paragraph text turn white
   $('#heartrate p').css({
@@ -112,7 +112,7 @@ function heartrateConceal(){
   });
 
   // Make the heart rate number disappear when the section is minimized as well as the "beats per minute"
-  $('.rate, #heartrate h4').hide();
+  $('#rateresults').hide();
 };
 
 // FUNCTION 4: Heart rate results once the ball has been clicked 10 times
@@ -130,11 +130,22 @@ function heartResults(){
   // The empty h2 in my HTML becomes the random number generated for the heart rate
   $('.rate').text(randomRate);
 
-  // Make the heart rate number appear when the results come in as well as the "beats per minute"
-  $('.rate, #heartrate h4').show();
+  // Make the "beats for minute" text appear
+  $('#rateresults h4').show();
+
+  // Make the heart rate number appear when the results come
+  $('#rateresults').show();
+
+  // Add a margin to the top of the heart rate results
+  $('#rateresults').css({
+    'margin-top':'10%'
+  });
 
   // Make the resulting heart rate number large
   $('.rate').css({
     'font-size':'300px'
   });
+
+  // Make the image get smaller after the results as well
+  $('#heartrate img').removeClass("svg");
 };

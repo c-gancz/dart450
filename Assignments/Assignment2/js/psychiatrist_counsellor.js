@@ -23,7 +23,7 @@ $(document).ready(function(){
 
                 // Make the height of the conversation approximately the height of the section
                 $('textarea').css({
-                  'height': heightPsychologist-375+"px"
+                  'height': heightPsychologist-450+"px"
                 });
               }
 
