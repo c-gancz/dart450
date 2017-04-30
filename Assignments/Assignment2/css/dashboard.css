@@ -272,3 +272,11 @@ input {
   95% { height: 2em; width: 3.5em; }
   100% { top: 18em; height: 1em; width: 3em; }
 }
+
+#heartrate img {
+  position: relative;
+  display: inline-block;
+  float: right;
+  margin-right:25px;
+  margin-top: 20px;
+}

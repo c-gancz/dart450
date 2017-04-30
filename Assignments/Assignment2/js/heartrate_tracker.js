@@ -63,6 +63,23 @@ function heartrateReveal(){
   $('#heartrate').css({
     'background-color':'rgb(255, 99, 0)'
   });
+
+  // Make the image get larger
+  $('#heartrate img').addClass("svg");
+
+  // Fix the position of the image when its enlarged
+  $('#heartrate img').css({
+    'position':'relative',
+    'margin-top':'-75px'
+  });
+
+  // Change the text with instructions on clicking the ball to get your first reading
+  $('#heartrate p').text('Click the ball until you get your first reading.');
+
+  // Make the paragraph text turn white
+  $('#heartrate p').css({
+    'color':'white'
+  });
 };
 
 // FUNCTION 2: The state the heart rate tracker returns to when the heart rate tracker is minimized.
@@ -72,5 +89,21 @@ function heartrateConceal(){
   // Change the background color back to blue
   $('#heartrate').css({
     'background-color':'#1ca4d6'
+  });
+
+  // Make the image get smaller
+  $('#heartrate img').removeClass("svg");
+
+  // Return the image to its original position
+  $('#heartrate img').css({
+    'position':'fixed'
+  });
+
+  // When minimized return the regular text
+  $('#heartrate p').text('Track your heart rate to see your current heart health levels');
+
+  // Make the paragraph return back to blue
+  $('#heartrate p').css({
+    'color':'#10143e'
   });
 };
