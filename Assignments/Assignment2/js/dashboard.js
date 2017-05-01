@@ -126,7 +126,6 @@ function rearrangeOff(){
     $('.blast').mouseover(function () {
       responsiveVoice.speak($(this).text(),voice,voiceParameters);
 
-
       // The text being read out is highlighted by changing the background-color of the sentence.
       $(this).css({
         'background-color':'black'

@@ -1,8 +1,8 @@
 
 $(document).ready(function(){
 
+  // Get external JSON file with data to plug into the probable diagnoses.
   $.getJSON('../data/data.json', getDiagnosis);
-
 
   // Only when the enlarge button is on will this function happen.
   $('#enlarge-on').click(function(){
@@ -296,7 +296,7 @@ $(document).ready(function(event) {
   // while making sure they add up to 100 for the percentage
 
   var mathOne = Math.floor(Math.random() * 90) + 1;
-  var mathTwo = Math.floor(Math.random() * (95 - mathOne)) + 1; 
+  var mathTwo = Math.floor(Math.random() * (95 - mathOne)) + 1;
   var mathThree = 100 - mathTwo - mathOne;
 
   // Variables placing these randomly generated numbers in objects.
@@ -352,33 +352,3 @@ function getDiagnosis (data) {
     diagnosis3 = getRandomElement(data.diagnosis);
 
 };
-
-// FUNCTION 6: Drag and drop feature. Code inspired and modified from Borrys Hasian at http://codepen.io/borryshasian/pen/yyaaWQ
-// TO KEEP EDITING FROM HERE
-  function dragDrop(){
-    $('li').bind('dragstart', function(event) {
-     event.originalEvent.dataTransfer.setData("text/plain",  event.target.getAttribute('id'));
-   });
-
-   $('ul').bind('dragover', function(event) {
-     event.preventDefault();
-   });
-
-   $('ul').bind('dragenter', function(event) {
-     $(this).addClass("over");
-   });
-
-   $('ul').bind('dragleave drop', function(event) {
-     $(this).removeClass("over");
-   });
-
-   $('li').bind('drop', function(event) {
-     return false;
-   });
-
-   $('ul').bind('drop', function(event) {
-     var listitem = event.originalEvent.dataTransfer.getData("text/plain");
-     event.target.appendChild(document.getElementById(listitem));
-     event.preventDefault();
-   });
-  };
