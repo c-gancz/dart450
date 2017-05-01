@@ -141,37 +141,5 @@ function heartResults(){
   $('.rate').css({
     'font-size':'300px'
   });
-
-  // Once the results are in, completely remove the ball from the HTML to make sure it doesn't reappear.
-  $('#ball').remove();
-
-    // Considering I only want the user to have the function where they need to click the ball 10 times happen once and not every time the user resizes the window, I need to tell my jQuery UI that once the function has happened, only show the results when resizing the heart rate tracker section after the function was executed.
-    $('#heartrate').resizable({
-        resize: function(event, ui) {
-              var widthHeartrate = ui.size.width;
-              var heightHeartrate = ui.size.height;
-
-              if (widthHeartrate > 500 && heightHeartrate > 600) {
-
-                // Keep the heart rate results
-                $('#rateresults').show();
-
-                // Maintain all CSS-changed elements from the heartrateReveal function
-                heartrateReveal();
-
-                // Make sure the text that appears when the section is enlarged is the one of the results and not the one of the instructions on how to produce the heart rate reading
-                $('#heartrate p').text('Based on your rising heart rate when clicking the ball, your average heart rate on a daily basis is');
-              }
-
-              // Else statement enabling the section to return to its initial state when minimized
-              else {
-                // Hide the results
-                $('#rateresults').hide();
-
-                // Maintain all CSS properties of the section's initial state when its not enlarged
-                  heartrateConceal();
-                };
-
-          } // Closing the jQuery UI resize function.
-    }); // Closing the entire heartrate tracker reveal/conceal function.
+  
 }; // Closing the heartResults() function.

@@ -51,7 +51,8 @@ function pharmacyReveal(){
 
   // Make the paragraph text white
   $('#pharmacy p').css({
-    'color':'white'
+    'color':'white',
+    'padding':'30px'
   });
 
   // Revealing all of my HTML elements which have the class "drugs" along with letters A-Z
@@ -87,6 +88,7 @@ function pharmacyReveal(){
 function getDrugs(data){
 
   // Variables that are identified alphabetically as part of the drugs.json file (drugs are ordered in alphabetical order)
+  // Data JSON file made with various lists from Dariusk Corpora at https://github.com/dariusk/corpora
   var dataDrugsa = data.drugsa, i;
   var dataDrugsb = data.drugsb, i;
   var dataDrugsc = data.drugsc, i;
@@ -205,7 +207,8 @@ function pharmacyConceal(){
 
   // Return the paragraph color to dark blue
   $('#pharmacy p').css({
-    'color':'#10143e'
+    'color':'#10143e',
+    'padding':'0px'
   });
 
   // Conceal all of the A-Z drugs sections
