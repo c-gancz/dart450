@@ -302,3 +302,36 @@ input {
 }
 
 /*********************  PHARMACY SECTION   ******************/
+#pharmacy p {
+  display: inline-block;
+  float: left;
+  padding:30px;
+  color:white;
+}
+.drugsa {
+  background-color: red;
+  width:300px;
+  border: 4px solid $icon-color;
+animation: roll 1000s infinite;
+transform-origin: center;
+outline: 1px solid transparent;
+}
+
+@keyframes roll {
+	0% {
+		transform: rotate(0);
+	}
+	50%, 100% {
+		transform: rotate(90deg);
+	}
+}
+
+.drugsb {
+  background-color: blue;
+  width:300px;
+  border: 4px solid $icon-color;
+  animation: roll 500s infinite;
+  transform-origin: center;
+  outline: 1px solid transparent;
+  margin-top: -300px;
+}
